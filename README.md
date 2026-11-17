@@ -196,11 +196,16 @@ Offense (QB/RB/WR/TE/K) and IDP (DL/LB/DB) are separate pools. Each has position
   experience, draft slot, weeks since last game, and usage x implied-total interactions.
 **Models** (`model.py`): LightGBM per pool. Mean (L2), quantiles 10/25/50/75/90 (pinball loss, sorted to avoid crossing), and
 P(start-worthy) / P(boom) classifiers with isotonic calibration on a held-out season. Thresholds (start / boom):
-QB 17/25, RB 10/20, WR 10/20, TE 7/15, K 8/13, DL 5/10, LB 7/12, DB 6/11.
+QB 17/25, RB 10/20, WR 10/20, TE 7/15, K 8/13, DL / LB / DB 6/12 (the league's IDP lines, same as idp_threshold.py).
 Production fit: model A trains 2019 to last-2 seasons and early-stops/calibrates on last season; model B refits through the last
 completed week with A's iterations x1.15 and A's calibrators.
 **Availability**: injury report, Yahoo tag, NFL roster status (IR = out 4 weeks then 50%), and missed-last-game (0.6). It mixes a
 chance of 0 into the mean and quantiles; short-term injuries heal at 50% per week in the ROS sums.
+**One IDP model for the coming week** (Nov 17): when `threshold_week<N>.csv` exists, week-N IDP numbers on the board
+(P(6+), P(12+), expected points, play probability) come from the threshold model, and this model's quantiles are shifted to
+its mean, so the board and the streamer lists always agree. Head-to-head at 6+/12+ on 2023-2026 (each season out of sample),
+AUC within position: threshold model 0.643 / 0.666, this model 0.641 / 0.660 (threshold model ahead in 2023-2025, behind
+in 2026); a stacked blend of the two added only ~0.003. Rest-of-season and playoff sums still come from this model.
 If `offense_week<N>.csv` exists, this week's offense projections are blended 50/50 with offense.py (backtest weeks 4-8:
 Spearman 0.399/0.396 alone -> 0.421 blended, MAE 4.88 -> 4.80).
 **Value** (`value.py`, live in the page): mode score = mean pulled toward the 25th pct (consistency) or 90th pct (ceiling),
