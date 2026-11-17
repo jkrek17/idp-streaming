@@ -1,4 +1,57 @@
-# IDP streaming ratings (v2.1 + boom model)
+# IDP streaming ratings (v3 threshold model + v2.1 + boom model)
+
+## v3: P(6+) and P(12+) threshold model (`idp_threshold.py`), added Nov 17
+The streamer lists now rank by the chance a player clears **6 points** (safe list) or **12 points** (boom list),
+from a model trained on **2018-2026** nflverse data instead of one season.
+
+    .venv/bin/python idp_threshold.py --refresh --week 11   # refresh this season's data, write threshold_week11.csv
+    .venv/bin/python idp_threshold.py --backtest            # walk-forward backtest -> threshold_backtest.txt
+`run.sh` runs it after `idp_ratings.py`; `streamers.py` reads `threshold_week<N>.csv` (falls back to v2 ordering without it).
+Data is cached in `cache/` (gitignored, ~95 MB); the first run downloads everything (~40 s), later `--refresh` runs
+only re-pull the current season.
+
+**Model.** One row per defender-game (REG season, about 93,000 since 2018). Every feature uses only earlier games:
+- Player history, exponentially weighted over his past games across seasons (half-lives 3 and 10 games): points,
+  tackle points, big-play points, solo/assist tackles, TFL, sacks, QB hits, PFR pressures / hurries / blitzes /
+  targets / missed tackles, share of team tackles, snap %, past 6+ and 12+ rates; per-snap rates (half-life 6);
+  last game snap %, snap trend, prior-season ppg / snap % / pressures, games this season and career, missed games.
+- Game context: opponent offense (plays, dropbacks, runs, sack / hit / INT / fumble rates, IDP points and tackles it
+  allows to this position group), own defense plays faced, Vegas spread and total, opponent implied total, home/away.
+- Home stat crew: tackles and assists credited per play in games at that stadium vs league (crews range from about 4% below to 7% above average).
+- Pre-game injury report: own questionable / practice status, and snap share vacated by Out/Doubtful teammates.
+- Gradient-boosted trees (scikit-learn), shallow and heavily regularized, for P(6+ | plays), P(12+ | plays) and
+  expected points. Then x play probability from history: Out 0, Doubtful 0.8%, Questionable 63%, DNP practice with no
+  status 77%, on report otherwise 91%, not on report 97.7%, missed last game with no report 58%; IR / cut / practice
+  squad / off his team's latest roster 0. Yahoo tags stand in when there is no NFL report yet (`streamers.TAG_PLAY`).
+- Leak check: rebuilding features with all later games deleted gives identical values for the cutoff week.
+
+**Backtest** (`threshold_backtest.txt`; each season trained only on earlier seasons, 2026 refit every week; pool =
+starters with recent snap share >= 50%; "ppg" = EW points per game, roughly what a manager sorts by):
+
+| season | 6+ base | 6+ AUC within pos (v3 / ppg) | 6+ top-10 hit (v3 / ppg) | 12+ base | 12+ AUC (v3 / ppg) | 12+ top-10 hit (v3 / ppg) |
+|---|---|---|---|---|---|---|
+| 2023 | 25.6% | 0.639 / 0.620 | 52.8% / 46.7% | 4.6% | 0.664 / 0.649 | 15.0% / 11.7% |
+| 2024 | 24.4% | 0.645 / 0.620 | 47.8% / 36.1% | 4.3% | 0.651 / 0.626 | 17.8% / 8.9% |
+| 2025 | 23.3% | 0.641 / 0.614 | 48.9% / 46.1% | 3.9% | 0.681 / 0.675 | 10.6% / 10.6% |
+| 2026 wk 2-10 | 24.4% | 0.636 / 0.623 | 46.7% / 42.2% | 4.2% | 0.656 / 0.666 | 12.2% / 7.8% |
+
+- Calibrated: by decile, predicted vs observed P(6+) is within 1 point everywhere (0.448 -> 0.457 in the top
+  decile), and P(12+) within 0.6 points (0.112 -> 0.113). Calibration holds by position too.
+- Waiver tier (outside each week's top 24 LB / 24 DL / 36 DB by ppg): the top 5 picks per week hit 6+ 47% of the
+  time (base 21%, ppg 39%) and 12+ 9.8% (base 3.3%, ppg 6.3%).
+- vs v2 on 2026 weeks 4-10 (2,057 player-games): AUC within position 0.640 vs 0.613 for 6+ and 0.665 vs 0.580 for
+  12+; 12+ log loss 0.1730 vs 0.1785. v2's top 10 hit 6+ more often (52.9% vs 47.1%, 4 picks over 7 weeks, inside
+  noise); from the top 20 down v3 is ahead. The v2 mean stays in the lists as a tiebreak and reference column.
+- What did not help (2023-2025 holdouts): bigger trees (AUC -0.005), LightGBM (same as scikit-learn), monotone
+  constraints, a slower learning rate, per-position logistic regression (-0.003), the injury features (neutral, kept
+  because they matter for snaps live), and blending in the v2 mean (helped 6+ by 0.003 in 2026, hurt 12+).
+- Ceiling: weekly IDP points are noisy. Within-position AUC of ~0.64 (6+) and ~0.66 (12+) is about what box-score and
+  snap data support; the remaining gains are in snap-share news (injuries, depth changes) that arrives late in the week,
+  so **rerun Friday or Saturday** after injury reports.
+
+---
+
+# v2.1 model and boom model (still used for the mean projection, matchup notes and the dashboard)
 
 Weekly DL / LB / DB projections and 0-100 ratings for Irene's Bush League (Yahoo 54162), built on 2026 nflverse data (`nflreadpy`).
 v2 adds opponent offensive-line ratings, team-volume matchups by role, and a walk-forward backtest.
@@ -98,6 +151,8 @@ Calibration, walk-forward wks 4-7 (`calib_boom.py`, `backtest_boom_weeks4-7.txt`
 - Bottom line: boom ranking finds a few more 10+ games, mostly by promoting edges and volatile players, at a small cost in average points.
 
 ## Streamers (`streamers.py`)
+- **Since v3:** safe = P(6+) from `threshold_week<N>.csv` (tiebreak v2 mean), boom = P(12+) (tiebreak v2 P(10+)).
+  Columns `v3_p_ge6`, `v3_p_ge12`, `v3_x_pts`, `v3_p_play`, plus the starter's v3 odds. The bullets below describe the v2 fallback.
 - Joins ratings to Yahoo's available list by normalized name + team (LAR->LA, Jr/II stripped, initial fallback). Yahoo positions are used as given.
 - LB slot = Yahoo positions containing LB. D slot = anyone.
 - Shows W (waivers until Oct 31) vs FA.
