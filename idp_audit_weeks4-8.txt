@@ -1,0 +1,96 @@
+rows 1511 {'DB': 688, 'DL': 501, 'LB': 322}
+
+(c) single-factor walk-forward signal, weeks 4-8: corr(z, resid) | top-third minus bottom-third: pts, 12+ rate
+  DL sack_rate   r=+0.016  dPts=+0.09  d12=-0.024
+  DL hit_rate    r=+0.056  dPts=+0.82  d12=-0.007
+  DL give_pg     r=-0.035  dPts=-0.26  d12=-0.011
+  DL stuff_rate  r=+0.050  dPts=+0.85  d12=+0.048
+  DL big_DL      r=+0.012  dPts=+0.30  d12=-0.018
+  DL b12_DL      r=+0.053  dPts=+0.46  d12=-0.002
+  DL tkl_DL      r=+0.043  dPts=+0.21  d12=-0.048
+  DL plays_pg    r=-0.057  dPts=-0.53  d12=-0.036
+  DL pass_pg     r=-0.065  dPts=-0.51  d12=-0.030
+  LB sack_rate   r=+0.015  dPts=-0.15  d12=-0.009
+  LB hit_rate    r=-0.002  dPts=-0.28  d12=-0.028
+  LB give_pg     r=+0.033  dPts=+0.34  d12=-0.020
+  LB stuff_rate  r=-0.048  dPts=-0.33  d12=-0.027
+  LB big_LB      r=+0.006  dPts=+0.30  d12=-0.002
+  LB b12_LB      r=-0.040  dPts=-0.28  d12=-0.035
+  LB tkl_LB      r=+0.044  dPts=+0.24  d12=+0.009
+  LB plays_pg    r=-0.047  dPts=+0.01  d12=-0.003
+  LB rush_pg     r=+0.078  dPts=+0.62  d12=-0.011
+  DB int_rate    r=+0.021  dPts=+0.21  d12=+0.009
+  DB give_pg     r=+0.077  dPts=+0.55  d12=+0.037
+  DB sack_rate   r=+0.037  dPts=-0.08  d12=+0.005
+  DB big_DB      r=+0.061  dPts=+0.40  d12=+0.017
+  DB b12_DB      r=+0.040  dPts=+0.30  d12=+0.022
+  DB tkl_DB      r=+0.043  dPts=+0.16  d12=-0.005
+  DB plays_pg    r=+0.037  dPts=+0.34  d12=+0.001
+  DB pass_pg     r=+0.050  dPts=+0.40  d12=-0.009
+
+(c) walk-forward weights: train weeks 4..W-1, test W (5-8). MSE gain vs no matchup (pts^2), corr pred-vs-resid
+  DL lam=0.05: MSEgain=-0.455 r=+0.066
+  DL lam=0.2: MSEgain=-0.311 r=+0.064
+  DL lam=1.0: MSEgain=-0.068 r=+0.057
+  LB lam=0.05: MSEgain=-1.637 r=-0.015
+  LB lam=0.2: MSEgain=-1.058 r=-0.019
+  LB lam=1.0: MSEgain=-0.324 r=-0.023
+  DB lam=0.05: MSEgain=-0.412 r=+0.010
+  DB lam=0.2: MSEgain=-0.304 r=+0.015
+  DB lam=1.0: MSEgain=-0.114 r=+0.027
+
+old-style (volume/FPA percentile) score corr with resid:
+  DL r=+0.042
+  LB r=+0.030
+  DB r=+0.067
+final DL (pts per +1 SD, lam=1.0): {'hit_rate': np.float64(0.066), 'stuff_rate': np.float64(0.064), 'b12_DL': np.float64(0.067), 'tkl_DL': np.float64(0.079)}
+final LB (pts per +1 SD, lam=1.0): {'sack_rate': np.float64(0.015), 'hit_rate': np.float64(0.004), 'give_pg': np.float64(0.039), 'tkl_LB': np.float64(0.053), 'rush_pg': np.float64(0.14)}
+final DB (pts per +1 SD, lam=1.0): {'give_pg': np.float64(0.089), 'sack_rate': np.float64(0.047), 'big_DB': np.float64(0.045), 'b12_DB': np.float64(0.014), 'tkl_DB': np.float64(0.039), 'plays_pg': np.float64(0.016), 'pass_pg': np.float64(0.063)}
+
+12+ rate by walk-forward matchup tercile (weeks 5-8):
+  DL {'bad': {'n': 134, 'r12': 0.06, 'resid': -0.263}, 'mid': {'n': 127, 'r12': 0.047, 'resid': 0.152}, 'good': {'n': 130, 'r12': 0.023, 'resid': 0.295}}
+  LB {'bad': {'n': 86, 'r12': 0.058, 'resid': 0.08}, 'mid': {'n': 84, 'r12': 0.083, 'resid': 0.319}, 'good': {'n': 85, 'r12': 0.035, 'resid': -0.914}}
+  DB {'bad': {'n': 185, 'r12': 0.016, 'resid': -0.265}, 'mid': {'n': 180, 'r12': 0.033, 'resid': -0.186}, 'good': {'n': 179, 'r12': 0.034, 'resid': 0.036}}
+
+(a) tackle pts: corr(pred, actual tkl pts) by snap estimate
+  season  r=0.528 MAE=1.07
+  last3   r=0.521 MAE=1.08
+  50/50   r=0.526 MAE=1.07
+
+(b,d) big-play pts per game: corr with actual big pts, by group
+  DL raw=+0.139  capped=+0.143  shrunk300=+0.157  capped+shrunk=+0.162  qb-hits=+0.163
+  LB raw=+0.036  capped=+0.027  shrunk300=+0.048  capped+shrunk=+0.038  qb-hits=+0.059
+  DB raw=-0.022  capped=-0.012  shrunk300=+0.008  capped+shrunk=+0.019  qb-hits=+0.038
+
+(e) recency: corr(prior ppg, actual) by decay
+  decay 1.0: r=0.194 MAE=2.823
+  decay 0.8: r=0.196 MAE=2.837
+  decay 0.6: r=0.186 MAE=2.904
+
+(f) 12+ games: prior 12+ rate vs next-week 12+ (weeks 4-8)
+   {Interval(-0.01, 0.0, closed='right'): {'n': 1237, 'obs': 0.043}, Interval(0.0, 0.2, closed='right'): {'n': 155, 'obs': 0.045}, Interval(0.2, 1.0, closed='right'): {'n': 119, 'obs': 0.025}}
+   model p_ge12 bins (wks4-7): {Interval(0.0, 0.02, closed='right'): {'n': 446, 'pred': 0.012, 'obs': nan}, Interval(0.02, 0.05, closed='right'): {'n': 508, 'pred': 0.032, 'obs': nan}, Interval(0.05, 0.1, closed='right'): {'n': 258, 'pred': 0.068, 'obs': nan}, Interval(0.1, 1.0, closed='right'): {'n': 72, 'pred': 0.131, 'obs': nan}}
+
+(g) EDGE-flagged LBs vs true LBs vs DL: 12+ rate, big share; which feature set predicts them
+  EDGE_LB: n=119 ppg=4.68 12+=0.092 big share=0.66
+  LB: n=322 ppg=5.32 12+=0.068 big share=0.34
+  DL other: n=382 ppg=3.33 12+=0.029 big share=0.55
+  EDGE_LB resid vs DL matchup model r=+0.026
+  EDGE_LB resid vs LB matchup model r=+0.015
+
+(c) fixed big-play-first index, ONE scale parameter fit walk-forward (train 4..W-1, test W=5-8)
+  DL: MSEgain=+0.0008 r=+0.013  in-sample corr=+0.028  final scale=0.076 pts per index-SD (index sd=0.69)
+  LB: MSEgain=-0.0026 r=-0.019  in-sample corr=+0.023  final scale=0.061 pts per index-SD (index sd=0.65)
+  DB: MSEgain=+0.0244 r=+0.051  in-sample corr=+0.063  final scale=0.137 pts per index-SD (index sd=0.76)
+
+(f) model P(12+) calibration wks 4-7: {Interval(0.0, 0.02, closed='right'): {'n': 446, 'pred': 0.012, 'obs': 0.034}, Interval(0.02, 0.05, closed='right'): {'n': 508, 'pred': 0.032, 'obs': 0.031}, Interval(0.05, 0.1, closed='right'): {'n': 258, 'pred': 0.068, 'obs': 0.054}, Interval(0.1, 1.0, closed='right'): {'n': 72, 'pred': 0.131, 'obs': 0.083}}
+(f) what predicts a 12+ game? AUC, weeks 4-8 walk-forward priors:
+  avg: AUC=0.593
+  r12: AUC=0.484
+  bigx: AUC=0.555
+  hitx: AUC=0.595
+  tklx: AUC=0.568
+  edge_lb flag: AUC=0.550
+  DL: n12=22 avg AUC=0.675 big AUC=0.665 hits AUC=0.692 r12 AUC=0.513
+  LB: n12=22 avg AUC=0.483 big AUC=0.414 hits AUC=0.545 r12 AUC=0.421
+  DB: n12=19 avg AUC=0.561 big AUC=0.507 hits AUC=0.472 r12 AUC=0.477

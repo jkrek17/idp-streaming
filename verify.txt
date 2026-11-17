@@ -1,0 +1,1 @@
+{'decay': 0.5, 'opp_alpha': 0.8, 'snap_recent_w': 0.8, 'lb_bias': np.float64(-0.0007607465374018433), 'top_bias': np.float64(-0.16956521690809997), 'n_top': 89, 'lb_mae': np.float64(3.071763888634053), 'lb_sp': np.float64(0.316915544141046), 'db_bias': np.float64(-4.2742810410758776e-05)}

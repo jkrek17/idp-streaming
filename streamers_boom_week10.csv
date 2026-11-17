@@ -1,0 +1,33 @@
+slot,list_type,slot_rank,player,team,yahoo_pos,role,matchup,waiver,yahoo_tag,mean,sim_median,floor_p10,p90,p_ge10,p_ge12,p_sack,p_takeaway,ol_matchup
+LB,boom,1,Jamien Sherwood,NYJ,LB,LB,vs BUF,W,,8.22,7.5,3.5,14.0,0.296,0.178,0.113,0.132,
+LB,boom,2,David Bailey,NYJ,"LB,DE",EDGE,vs BUF,W,,7.54,6.0,1.75,15.5,0.257,0.186,0.42,0.086,"BUF OL below-avg in pass pro (adj sack 6.7%, hit 16.6%/dropback), ~33 exp dropbacks; OL banged up: Dion Dawkins (DNP W9); Alec Anderson (DNP W9)"
+LB,boom,3,Demario Davis,NYJ,LB,LB,vs BUF,W,,7.35,6.5,3.0,12.75,0.225,0.132,0.112,0.13,
+LB,boom,4,Kaden Elliss,NO,LB,LB,vs CAR,W,,7.0,5.75,2.25,13.25,0.216,0.137,0.266,0.155,"CAR OL below-avg in pass pro (adj sack 7.3%, hit 14.9%/dropback), ~44 exp dropbacks; OL banged up: Damien Lewis (DNP W9)"
+LB,boom,5,Sonny Styles,WAS,LB,LB,@ NYG,W,,7.05,6.25,2.75,12.75,0.212,0.126,0.115,0.158,
+LB,boom,6,Anthony Hill Jr.,TEN,LB,LB,vs JAX,W,,7.02,6.25,2.75,12.5,0.202,0.118,0.1,0.145,
+LB,boom,7,Kendal Daniels,ATL,LB,LB,vs KC,W,,6.74,6.0,2.0,12.5,0.201,0.12,0.108,0.157,
+LB,boom,8,Jacob Rodriguez,MIA,LB,LB,@ IND,W,,6.46,5.5,2.25,12.25,0.181,0.107,0.181,0.147,"IND OL below-avg in pass pro (adj sack 6.9%, hit 15.7%/dropback), ~36 exp dropbacks; OL banged up: Jalen Travis (41% snaps W9); Quenton Nelson (DNP W9)"
+LB,boom,9,Jordyn Brooks,MIA,LB,LB,@ IND,W,,6.54,5.75,2.25,11.75,0.174,0.095,0.114,0.14,"IND OL below-avg in pass pro (adj sack 6.9%, hit 15.7%/dropback), ~36 exp dropbacks; OL banged up: Jalen Travis (41% snaps W9); Quenton Nelson (DNP W9)"
+LB,boom,10,Dre Greenlaw,SF,LB,LB,@ DAL,W,,6.34,5.5,2.0,11.75,0.17,0.097,0.107,0.121,
+LB,boom,11,Christian Elliss,NE,LB,LB,@ DET,W,,6.32,5.5,2.25,11.5,0.163,0.093,0.141,0.101,
+LB,boom,12,Carl Granderson,NO,"LB,DE",EDGE,vs CAR,W,,5.49,3.75,0.75,12.525,0.163,0.115,0.419,0.082,"CAR OL below-avg in pass pro (adj sack 7.3%, hit 14.9%/dropback), ~44 exp dropbacks; OL banged up: Damien Lewis (DNP W9)"
+LB,boom,13,Patrick Queen,PIT,LB,LB,@ CIN,W,,6.21,5.25,2.0,11.75,0.154,0.094,0.192,0.122,
+LB,boom,14,Drue Tranquill,KC,LB,LB,@ ATL,W,,6.22,5.25,2.25,11.5,0.154,0.087,0.091,0.158,
+LB,boom,15,Pete Werner,NO,LB,LB,vs CAR,W,,5.78,4.75,1.25,11.5,0.151,0.091,0.148,0.169,"CAR OL below-avg in pass pro (adj sack 7.3%, hit 14.9%/dropback), ~44 exp dropbacks; OL banged up: Damien Lewis (DNP W9)"
+LB,starter,0,Andrew Van Ginkel,MIN,,EDGE,@ GB,rostered,,5.22,3.5,0.75,11.75,0.147,0.096,0.376,0.069,"GB OL above-avg in pass pro (adj sack 5.9%, hit 13.6%/dropback), ~35 exp dropbacks; OL banged up: Travis Glover (DNP W9)"
+D,boom,1,Jamien Sherwood,NYJ,LB,LB,vs BUF,W,,8.22,7.5,3.5,14.0,0.296,0.178,0.113,0.132,
+D,boom,2,David Bailey,NYJ,"LB,DE",EDGE,vs BUF,W,,7.54,6.0,1.75,15.5,0.257,0.186,0.42,0.086,"BUF OL below-avg in pass pro (adj sack 6.7%, hit 16.6%/dropback), ~33 exp dropbacks; OL banged up: Dion Dawkins (DNP W9); Alec Anderson (DNP W9)"
+D,boom,3,Demario Davis,NYJ,LB,LB,vs BUF,W,,7.35,6.5,3.0,12.75,0.225,0.132,0.112,0.13,
+D,boom,4,Kaden Elliss,NO,LB,LB,vs CAR,W,,7.0,5.75,2.25,13.25,0.216,0.137,0.266,0.155,"CAR OL below-avg in pass pro (adj sack 7.3%, hit 14.9%/dropback), ~44 exp dropbacks; OL banged up: Damien Lewis (DNP W9)"
+D,boom,5,Sonny Styles,WAS,LB,LB,@ NYG,W,,7.05,6.25,2.75,12.75,0.212,0.126,0.115,0.158,
+D,boom,6,Anthony Hill Jr.,TEN,LB,LB,vs JAX,W,,7.02,6.25,2.75,12.5,0.202,0.118,0.1,0.145,
+D,boom,7,Kendal Daniels,ATL,LB,LB,vs KC,W,,6.74,6.0,2.0,12.5,0.201,0.12,0.108,0.157,
+D,boom,8,Jacob Rodriguez,MIA,LB,LB,@ IND,W,,6.46,5.5,2.25,12.25,0.181,0.107,0.181,0.147,"IND OL below-avg in pass pro (adj sack 6.9%, hit 15.7%/dropback), ~36 exp dropbacks; OL banged up: Jalen Travis (41% snaps W9); Quenton Nelson (DNP W9)"
+D,boom,9,Jordyn Brooks,MIA,LB,LB,@ IND,W,,6.54,5.75,2.25,11.75,0.174,0.095,0.114,0.14,"IND OL below-avg in pass pro (adj sack 6.9%, hit 15.7%/dropback), ~36 exp dropbacks; OL banged up: Jalen Travis (41% snaps W9); Quenton Nelson (DNP W9)"
+D,boom,10,Dre Greenlaw,SF,LB,LB,@ DAL,W,,6.34,5.5,2.0,11.75,0.17,0.097,0.107,0.121,
+D,boom,11,Christian Elliss,NE,LB,LB,@ DET,W,,6.32,5.5,2.25,11.5,0.163,0.093,0.141,0.101,
+D,boom,12,Carl Granderson,NO,"LB,DE",EDGE,vs CAR,W,,5.49,3.75,0.75,12.525,0.163,0.115,0.419,0.082,"CAR OL below-avg in pass pro (adj sack 7.3%, hit 14.9%/dropback), ~44 exp dropbacks; OL banged up: Damien Lewis (DNP W9)"
+D,boom,13,Patrick Queen,PIT,LB,LB,@ CIN,W,,6.21,5.25,2.0,11.75,0.154,0.094,0.192,0.122,
+D,boom,14,Drue Tranquill,KC,LB,LB,@ ATL,W,,6.22,5.25,2.25,11.5,0.154,0.087,0.091,0.158,
+D,boom,15,Pete Werner,NO,LB,LB,vs CAR,W,,5.78,4.75,1.25,11.5,0.151,0.091,0.148,0.169,"CAR OL below-avg in pass pro (adj sack 7.3%, hit 14.9%/dropback), ~44 exp dropbacks; OL banged up: Damien Lewis (DNP W9)"
+D,starter,0,Quinnen Williams,DAL,,EDGE,vs SF,rostered,,5.05,4.0,1.0,10.5,0.122,0.073,0.27,0.062,"SF OL above-avg in pass pro (adj sack 5.9%, hit 14.3%/dropback), ~32 exp dropbacks"

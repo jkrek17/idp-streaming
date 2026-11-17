@@ -1,0 +1,33 @@
+slot,list_type,slot_rank,player,team,yahoo_pos,role,matchup,waiver,yahoo_tag,mean,sim_median,floor_p10,p90,p_ge10,p_ge12,p_sack,p_takeaway,ol_matchup
+LB,boom,1,Eric Wilson,MIN,LB,LB,vs BUF,W,,7.22,6.25,2.75,12.75,0.214,0.127,0.161,0.101,
+LB,boom,2,Jordyn Brooks,MIA,LB,LB,vs DET,W,,7.05,6.25,2.75,12.0,0.201,0.106,0.091,0.099,
+LB,boom,3,Devin Bush,CHI,LB,LB,vs TB,W,,6.65,5.75,2.5,11.75,0.177,0.097,0.123,0.109,
+LB,boom,4,Andrew Van Ginkel,MIN,"LB,DE",EDGE,vs BUF,W,,5.77,4.25,1.0,12.5,0.169,0.115,0.382,0.07,"BUF OL above-avg in pass pro (adj sack 5.6%, hit 14.4%/dropback), ~34 exp dropbacks; OL banged up: Spencer Brown (DNP W8)"
+LB,boom,5,Nate Landman,LA,LB,LB,@ WAS,W,,6.23,5.5,2.25,11.25,0.152,0.086,0.128,0.096,"WAS OL below-avg in pass pro (adj sack 6.6%, hit 16.1%/dropback), ~39 exp dropbacks; OL banged up: Matt Gulbin (DNP W8)"
+LB,boom,6,Josiah Trotter,TB,LB,LB,@ CHI,W,,6.25,5.5,2.25,11.25,0.149,0.08,0.109,0.103,
+LB,boom,7,Jacob Rodriguez,MIA,LB,LB,vs DET,W,,6.25,5.5,2.25,11.0,0.148,0.078,0.1,0.138,
+LB,boom,8,Quay Walker,LV,LB,LB,@ SF,W,,6.11,5.25,2.25,11.0,0.142,0.08,0.111,0.127,
+LB,boom,9,Quincy Williams,CLE,LB,LB,@ NO,W,,5.82,5.0,2.0,10.75,0.136,0.073,0.118,0.131,
+LB,boom,10,Carl Granderson,NO,"LB,DE",EDGE,vs CLE,W,,4.62,3.0,0.5,11.25,0.134,0.089,0.393,0.079,"CLE OL weak in pass pro (adj sack 8.2%, hit 17.6%/dropback), ~45 exp dropbacks"
+LB,boom,11,Barrett Carter,CIN,LB,LB,@ ATL,W,,5.77,5.0,2.0,10.75,0.13,0.068,0.093,0.13,
+LB,boom,12,Alex Anzalone,TB,LB,LB,@ CHI,W,,5.97,5.25,2.225,10.75,0.129,0.067,0.098,0.108,
+LB,boom,13,Zack Baun,PHI,LB,LB,vs NYG,W,,5.98,5.0,2.0,10.75,0.129,0.07,0.127,0.1,
+LB,boom,14,Kaden Elliss,NO,LB,LB,vs CLE,W,,5.57,4.75,1.75,10.75,0.128,0.076,0.167,0.144,"CLE OL weak in pass pro (adj sack 8.2%, hit 17.6%/dropback), ~45 exp dropbacks"
+LB,boom,15,Frankie Luvu,WAS,LB,LB,vs LA,W,,5.72,5.0,2.0,10.525,0.126,0.068,0.106,0.12,
+LB,starter,0,Jamien Sherwood,NYJ,,LB,@ KC,rostered,,6.31,5.5,2.25,11.5,0.156,0.085,0.112,0.132,
+D,boom,1,Eric Wilson,MIN,LB,LB,vs BUF,W,,7.22,6.25,2.75,12.75,0.214,0.127,0.161,0.101,
+D,boom,2,Jordyn Brooks,MIA,LB,LB,vs DET,W,,7.05,6.25,2.75,12.0,0.201,0.106,0.091,0.099,
+D,boom,3,Devin Bush,CHI,LB,LB,vs TB,W,,6.65,5.75,2.5,11.75,0.177,0.097,0.123,0.109,
+D,boom,4,Andrew Van Ginkel,MIN,"LB,DE",EDGE,vs BUF,W,,5.77,4.25,1.0,12.5,0.169,0.115,0.382,0.07,"BUF OL above-avg in pass pro (adj sack 5.6%, hit 14.4%/dropback), ~34 exp dropbacks; OL banged up: Spencer Brown (DNP W8)"
+D,boom,5,Nate Landman,LA,LB,LB,@ WAS,W,,6.23,5.5,2.25,11.25,0.152,0.086,0.128,0.096,"WAS OL below-avg in pass pro (adj sack 6.6%, hit 16.1%/dropback), ~39 exp dropbacks; OL banged up: Matt Gulbin (DNP W8)"
+D,boom,6,Josiah Trotter,TB,LB,LB,@ CHI,W,,6.25,5.5,2.25,11.25,0.149,0.08,0.109,0.103,
+D,boom,7,Jacob Rodriguez,MIA,LB,LB,vs DET,W,,6.25,5.5,2.25,11.0,0.148,0.078,0.1,0.138,
+D,boom,8,Quay Walker,LV,LB,LB,@ SF,W,,6.11,5.25,2.25,11.0,0.142,0.08,0.111,0.127,
+D,boom,9,George Karlaftis,KC,DE,EDGE,vs NYJ,W,,5.13,3.5,0.75,11.25,0.136,0.086,0.359,0.072,"NYJ OL average in pass pro (adj sack 6.4%, hit 14.9%/dropback), ~38 exp dropbacks; OL banged up: Jordan Meredith (DNP W8)"
+D,boom,10,Quincy Williams,CLE,LB,LB,@ NO,W,,5.82,5.0,2.0,10.75,0.136,0.073,0.118,0.131,
+D,boom,11,Zach Allen,DEN,"DT,DE",EDGE,@ CAR,W,,4.27,3.0,0.5,11.0,0.134,0.085,0.402,0.068,"CAR OL weak in pass pro (adj sack 8.0%, hit 16.2%/dropback), ~45 exp dropbacks; OL banged up: Corey Bullock (56% snaps W8)"
+D,boom,12,Carl Granderson,NO,"LB,DE",EDGE,vs CLE,W,,4.62,3.0,0.5,11.25,0.134,0.089,0.393,0.079,"CLE OL weak in pass pro (adj sack 8.2%, hit 17.6%/dropback), ~45 exp dropbacks"
+D,boom,13,Quinnen Williams,DAL,"DL,DT",EDGE,@ IND,W,,4.93,3.25,0.75,11.0,0.131,0.084,0.373,0.052,"IND OL weak in pass pro (adj sack 7.6%, hit 17.4%/dropback), ~40 exp dropbacks; OL banged up: Quenton Nelson (DNP W8)"
+D,boom,14,Maxx Crosby,LV,DE,EDGE,@ SF,W,,4.95,3.5,0.75,11.0,0.13,0.082,0.336,0.098,"SF OL above-avg in pass pro (adj sack 5.9%, hit 14.3%/dropback), ~34 exp dropbacks"
+D,boom,15,Barrett Carter,CIN,LB,LB,@ ATL,W,,5.77,5.0,2.0,10.75,0.13,0.068,0.093,0.13,
+D,starter,0,Kyle Hamilton,BAL,,S,vs JAX,rostered,,4.16,3.5,1.0,8.25,0.055,0.026,0.024,0.117,

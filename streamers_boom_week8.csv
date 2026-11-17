@@ -1,0 +1,33 @@
+slot,list_type,slot_rank,player,team,yahoo_pos,role,matchup,waiver,yahoo_tag,mean,sim_median,floor_p10,p90,p_ge10,p_ge12,p_sack,p_takeaway,ol_matchup
+LB,boom,1,Jamien Sherwood,NYJ,LB,LB,vs LV,FA,,6.54,5.75,2.5,11.75,0.173,0.092,0.134,0.137,
+LB,boom,2,Devin Bush,CHI,LB,LB,@ SEA,FA,,6.48,5.75,2.5,11.5,0.168,0.087,0.142,0.124,"SEA OL below-avg in pass pro (adj sack 6.4%, hit 17.0%/dropback), ~36 exp dropbacks; OL banged up: Christian Haynes (CUT)"
+LB,boom,3,Dallas Turner,MIN,"LB,DE",EDGE,@ DET,FA,,5.63,4.5,1.0,11.75,0.16,0.099,0.411,0.114,"DET OL above-avg in pass pro (adj sack 5.6%, hit 13.5%/dropback), ~37 exp dropbacks; OL banged up: Juice Scruggs (DNP W7)"
+LB,boom,4,Bobby Okereke,CAR,LB,LB,@ GB,FA,,6.25,5.5,2.25,11.25,0.158,0.081,0.148,0.135,
+LB,boom,5,Jacob Rodriguez,MIA,LB,LB,vs NE,FA,,6.39,5.75,2.5,11.25,0.157,0.079,0.093,0.156,
+LB,boom,6,Jordyn Brooks,MIA,LB,LB,vs NE,FA,,6.15,5.5,2.25,11.25,0.154,0.079,0.093,0.146,
+LB,boom,7,Josiah Trotter,TB,LB,LB,vs ATL,FA,,6.39,5.75,2.5,11.0,0.15,0.075,0.093,0.114,
+LB,boom,8,Zack Baun,PHI,LB,LB,@ WAS,W (until Oct 31),,6.25,5.5,2.5,11.0,0.146,0.075,0.161,0.088,
+LB,boom,9,Andrew Van Ginkel,MIN,"LB,DE",EDGE,@ DET,W (until Oct 31),,5.41,4.5,1.0,11.25,0.14,0.082,0.348,0.117,"DET OL above-avg in pass pro (adj sack 5.6%, hit 13.5%/dropback), ~37 exp dropbacks; OL banged up: Juice Scruggs (DNP W7)"
+LB,boom,10,Patrick Queen,PIT,LB,LB,vs CLE,FA,,5.72,4.75,1.75,10.75,0.136,0.07,0.209,0.142,"CLE OL weak in pass pro (adj sack 7.6%, hit 17.7%/dropback), ~39 exp dropbacks; OL banged up: Tytus Howard (64% snaps W7)"
+LB,boom,11,Quincy Williams,CLE,LB,LB,@ PIT,FA,,5.94,5.25,2.0,10.75,0.135,0.066,0.175,0.106,
+LB,boom,12,Devin Lloyd,CAR,LB,LB,@ GB,W (until Oct 31),,5.47,4.5,1.5,10.75,0.129,0.068,0.223,0.124,
+LB,boom,13,Demario Davis,NYJ,LB,LB,vs LV,FA,,5.75,5.0,2.0,10.5,0.128,0.062,0.175,0.105,
+LB,boom,14,Eric Wilson,MIN,LB,LB,@ DET,FA,,5.72,5.0,1.75,10.5,0.127,0.067,0.217,0.116,
+LB,boom,15,Barrett Carter,CIN,LB,LB,vs TEN,FA,,5.76,5.0,2.0,10.5,0.121,0.062,0.151,0.125,
+LB,starter,0,David Bailey,NYJ,,EDGE,vs LV,rostered,Q,4.87,3.75,0.0,11.25,0.138,0.08,0.324,0.091,"LV OL above-avg in pass pro (adj sack 5.0%, hit 15.2%/dropback), ~43 exp dropbacks; OL banged up: Jackson Powers-Johnson (DNP W7)"
+D,boom,1,Jamien Sherwood,NYJ,LB,LB,vs LV,FA,,6.54,5.75,2.5,11.75,0.173,0.092,0.134,0.137,
+D,boom,2,Devin Bush,CHI,LB,LB,@ SEA,FA,,6.48,5.75,2.5,11.5,0.168,0.087,0.142,0.124,"SEA OL below-avg in pass pro (adj sack 6.4%, hit 17.0%/dropback), ~36 exp dropbacks; OL banged up: Christian Haynes (CUT)"
+D,boom,3,Dallas Turner,MIN,"LB,DE",EDGE,@ DET,FA,,5.63,4.5,1.0,11.75,0.16,0.099,0.411,0.114,"DET OL above-avg in pass pro (adj sack 5.6%, hit 13.5%/dropback), ~37 exp dropbacks; OL banged up: Juice Scruggs (DNP W7)"
+D,boom,4,Nick Emmanwori,SEA,DB,S,vs CHI,FA,,5.86,5.0,1.0,11.5,0.16,0.088,0.215,0.11,
+D,boom,5,Bobby Okereke,CAR,LB,LB,@ GB,FA,,6.25,5.5,2.25,11.25,0.158,0.081,0.148,0.135,
+D,boom,6,Jacob Rodriguez,MIA,LB,LB,vs NE,FA,,6.39,5.75,2.5,11.25,0.157,0.079,0.093,0.156,
+D,boom,7,Budda Baker,ARI,DB,S,@ DAL,FA,,6.36,5.5,2.25,11.25,0.157,0.082,0.163,0.132,
+D,boom,8,Jordyn Brooks,MIA,LB,LB,vs NE,FA,,6.15,5.5,2.25,11.25,0.154,0.079,0.093,0.146,
+D,boom,9,Dillon Thieneman,CHI,DB,S,@ SEA,FA,,6.09,5.25,2.0,11.25,0.152,0.082,0.159,0.149,"SEA OL below-avg in pass pro (adj sack 6.4%, hit 17.0%/dropback), ~36 exp dropbacks; OL banged up: Christian Haynes (CUT)"
+D,boom,10,Josiah Trotter,TB,LB,LB,vs ATL,FA,,6.39,5.75,2.5,11.0,0.15,0.075,0.093,0.114,
+D,boom,11,Zack Baun,PHI,LB,LB,@ WAS,W (until Oct 31),,6.25,5.5,2.5,11.0,0.146,0.075,0.161,0.088,
+D,boom,12,Keisean Nixon,GB,DB,CB,vs CAR,FA,,6.25,5.5,2.5,11.0,0.143,0.072,0.046,0.137,"CAR OL below-avg in pass pro (adj sack 6.7%, hit 15.5%/dropback), ~44 exp dropbacks; OL banged up: Monroe Freeling (59% snaps W7)"
+D,boom,13,Andrew Van Ginkel,MIN,"LB,DE",EDGE,@ DET,W (until Oct 31),,5.41,4.5,1.0,11.25,0.14,0.082,0.348,0.117,"DET OL above-avg in pass pro (adj sack 5.6%, hit 13.5%/dropback), ~37 exp dropbacks; OL banged up: Juice Scruggs (DNP W7)"
+D,boom,14,Patrick Queen,PIT,LB,LB,vs CLE,FA,,5.72,4.75,1.75,10.75,0.136,0.07,0.209,0.142,"CLE OL weak in pass pro (adj sack 7.6%, hit 17.7%/dropback), ~39 exp dropbacks; OL banged up: Tytus Howard (64% snaps W7)"
+D,boom,15,Quincy Williams,CLE,LB,LB,@ PIT,FA,,5.94,5.25,2.0,10.75,0.135,0.066,0.175,0.106,
+D,starter,0,Kyle Hamilton,BAL,,S,@ BUF,rostered,,6.5,5.75,2.5,11.5,0.174,0.088,0.039,0.174,

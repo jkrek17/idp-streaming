@@ -1,0 +1,130 @@
+{
+ "team": "Breeces Pieces (team 4)",
+ "faab": 76,
+ "waivers_clear": "Nov 4",
+ "slots": [
+  "QB",
+  "WR",
+  "WR",
+  "RB",
+  "RB",
+  "TE",
+  "W/R/T",
+  "K",
+  "D",
+  "LB"
+ ],
+ "bench": 6,
+ "ir": 2,
+ "offense": [
+  {
+   "name": "Dak Prescott",
+   "team": "DAL",
+   "pos": "QB"
+  },
+  {
+   "name": "Bucky Irving",
+   "team": "TB",
+   "pos": "RB"
+  },
+  {
+   "name": "Kyren Williams",
+   "team": "LA",
+   "pos": "RB"
+  },
+  {
+   "name": "CeeDee Lamb",
+   "team": "DAL",
+   "pos": "WR"
+  },
+  {
+   "name": "Jaylen Waddle",
+   "team": "DEN",
+   "pos": "WR"
+  },
+  {
+   "name": "Brock Bowers",
+   "team": "LV",
+   "pos": "TE"
+  },
+  {
+   "name": "Khalil Shakir",
+   "team": "BUF",
+   "pos": "WR"
+  },
+  {
+   "name": "Ka'imi Fairbairn",
+   "team": "HOU",
+   "pos": "K"
+  },
+  {
+   "name": "Emanuel Wilson",
+   "team": "SEA",
+   "pos": "RB"
+  },
+  {
+   "name": "TreVeyon Henderson",
+   "team": "NE",
+   "pos": "RB",
+   "tag": "O"
+  },
+  {
+   "name": "Deebo Samuel",
+   "team": "SF",
+   "pos": "WR",
+   "tag": "Q"
+  },
+  {
+   "name": "Jordyn Tyson",
+   "team": "NO",
+   "pos": "WR",
+   "tag": "IR"
+  },
+  {
+   "name": "Hunter Henry",
+   "team": "NE",
+   "pos": "TE",
+   "tag": "Q"
+  },
+  {
+   "name": "Chase McLaughlin",
+   "team": "TB",
+   "pos": "K"
+  }
+ ],
+ "idp": [
+  {
+   "name": "Kyle Hamilton",
+   "team": "BAL",
+   "slot": "D"
+  },
+  {
+   "name": "Jamien Sherwood",
+   "team": "NYJ",
+   "slot": "LB"
+  }
+ ],
+ "idp_start": {
+  "D": [
+   "Kyle Hamilton",
+   "BAL"
+  ],
+  "LB": [
+   "Jamien Sherwood",
+   "NYJ"
+  ]
+ },
+ "idp_start_note": "Week 9 roster",
+ "pending_claims": [
+  {
+   "add": "Keenan Allen",
+   "bid": 5,
+   "drop": "Hunter Henry"
+  },
+  {
+   "add": "Devin Singletary",
+   "bid": 3,
+   "drop": "Hunter Henry"
+  }
+ ]
+}

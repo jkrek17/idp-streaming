@@ -1,0 +1,6 @@
+*.pkl
+*.log
+*.bak
+.venv/
+__pycache__/
+*_raw.md

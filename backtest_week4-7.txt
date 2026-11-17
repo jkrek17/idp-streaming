@@ -1,0 +1,21 @@
+      spearman               top24_avg_pts               top24_hit              
+model     base     v1     v2          base     v1     v2      base     v1     v2
+pos                                                                             
+DB       0.241  0.272  0.286         4.591  5.107  5.505     0.219  0.250  0.302
+DL       0.161  0.212  0.177         3.945  3.906  3.615     0.417  0.406  0.417
+LB       0.253  0.281  0.325         5.891  5.750  6.195     0.344  0.312  0.365
+
+All positions, mean over weeks:
+       spearman  top24_hit  top24_avg_pts    mae
+model                                           
+base      0.219      0.326          4.809  2.866
+v1        0.255      0.323          4.921  2.690
+v2        0.263      0.361          5.105  2.639
+
+By week (Spearman, mean over positions):
+model   base     v1     v2
+week                      
+4      0.161  0.206  0.254
+5      0.240  0.255  0.218
+6      0.205  0.235  0.264
+7      0.268  0.325  0.314

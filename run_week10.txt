@@ -1,0 +1,79 @@
+/workspace/idp/idp_ratings.py:406: Pandas4Warning: 'ArrowStringArray' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  T["team"] = T.gsis_id.map(ros.team).fillna(T.stat_team)
+/workspace/idp/idp_ratings.py:518: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  dnp = T.inj_practice.fillna("").str.startswith("Did Not")
+Season 2026, target week 10. Generated 2026-11-10 09:03 ET
+Data through week: {'ps': 9, 'snaps': 9, 'pbp': 9} | rosters/injuries week: 9 9
+Bye teams: CHI, DEN, PHI, TB
+Wrote 654 players -> /workspace/idp/ratings_week10.csv
+
+Opponent OL pass-pro index (>1 = easier for pass rushers):
+         pr_idx  sack_rate_adj  hit_rate_adj  stuff_rate_adj   db_pg  ol_missing  pr_idx_inj                                                   missing
+posteam                                                                                                                                               
+LAC       1.187          0.086         0.157           0.196  38.195         0.8       1.235   Cole Strange (58% snaps W9); Alex Harkey (35% snaps W9)
+CLE       1.234          0.083         0.179           0.192  43.092         0.0       1.234                                                          
+NYG       1.193          0.081         0.170           0.215  36.901         0.0       1.193                                                          
+ARI       1.070          0.070         0.159           0.176  40.769         1.6       1.155          Jayden Williams (DNP W9); Hayden Conner (DNP W9)
+BUF       1.063          0.067         0.166           0.162  35.937         1.6       1.149             Dion Dawkins (DNP W9); Alec Anderson (DNP W9)
+NYJ       1.103          0.075         0.157           0.191  35.965         0.8       1.147                                  Jordan Meredith (DNP W9)
+DET       1.091          0.071         0.165           0.196  30.749         0.8       1.134                               Christian Mahogany (DNP W9)
+BAL       1.115          0.070         0.174           0.183  27.755         0.0       1.115                                                          
+IND       1.051          0.069         0.157           0.187  37.307         1.2       1.114      Jalen Travis (41% snaps W9); Quenton Nelson (DNP W9)
+MIA       1.105          0.074         0.160           0.205  31.643         0.0       1.105                                                          
+CAR       1.059          0.073         0.149           0.175  43.137         0.8       1.102                                     Damien Lewis (DNP W9)
+WAS       1.046          0.070         0.152           0.188  38.796         0.8       1.088  Lucas Patrick (44% snaps W9); Matt Gulbin (56% snaps W9)
+NO        1.032          0.069         0.150           0.193  42.590         0.8       1.073                                    Asim Richards (DNP W9)
+MIN       1.062          0.066         0.167           0.170  32.764         0.0       1.062                                                          
+NE        1.024          0.067         0.152           0.154  38.458         0.4       1.044                               Walter Rouse (51% snaps W9)
+KC        1.019          0.059         0.171           0.160  37.210         0.4       1.039                               Jaylon Moore (64% snaps W9)
+CIN       1.004          0.061         0.162           0.190  38.173         0.0       1.004                                                          
+DAL       1.002          0.064         0.153           0.170  37.980         0.0       1.002                                                          
+PIT       0.981          0.064         0.148           0.179  32.184         0.0       0.981                                                          
+TEN       0.961          0.059         0.152           0.188  38.867         0.4       0.980                                  JC Latham (55% snaps W8)
+SEA       0.921          0.055         0.149           0.163  33.591         0.8       0.958                                    Charles Cross (DNP W9)
+LV        0.913          0.051         0.158           0.207  33.994         0.8       0.949     Caleb Rogers (40% snaps W9); Trey Zuhn (60% snaps W9)
+GB        0.904          0.059         0.136           0.191  37.491         0.8       0.941                                    Travis Glover (DNP W9)
+SF        0.927          0.059         0.143           0.168  32.371         0.0       0.927                                                          
+LA        0.881          0.054         0.140           0.153  37.771         0.8       0.916                                      Steve Avila (DNP W9)
+HOU       0.911          0.055         0.148           0.202  37.619         0.0       0.911                                                          
+JAX       0.908          0.058         0.139           0.159  26.796         0.0       0.908                                                          
+ATL       0.779          0.051         0.117           0.176  31.977         0.0       0.779                                                          
+
+=== Top 10 DL ===
+ rank_pos            player role team matchup  proj_pts  rating_pos flags                                                                                     reason
+        1   Carl Granderson EDGE   NO  vs CAR      5.49       100.0                          10.2 wtd-L4 (7.3 ssn), 73% snaps; 9 QB hits/7.5 sk -> 0.67 xSk; soft OL
+        2 Will Anderson Jr. EDGE  HOU   @ CLE      5.38        98.0                          6.3 wtd-L4 (9.2 ssn), 75% snaps; 17 QB hits/9.5 sk -> 0.72 xSk; soft OL
+        3  George Karlaftis EDGE   KC   @ ATL      5.28        96.0                          11.8 wtd-L4 (7.4 ssn), 81% snaps; 19 QB hits/4 sk -> 0.46 xSk; tough OL
+        4  Quinnen Williams EDGE  DAL   vs SF      5.05        92.0                           11.9 wtd-L4 (7.3 ssn), 64% snaps; 9 QB hits/5 sk -> 0.34 xSk; tough OL
+        5       Maxx Crosby EDGE   LV  vs SEA      4.89        89.0                           5.6 wtd-L4 (4.4 ssn), 93% snaps; 20 QB hits/4 sk -> 0.49 xSk; tough OL
+        6       Chase Young EDGE   NO  vs CAR      4.85        88.0                            6.8 wtd-L4 (6.4 ssn), 71% snaps; 13 QB hits/8 sk -> 0.61 xSk; soft OL
+        7  Aidan Hutchinson EDGE  DET   vs NE      4.64        85.0                            3.1 wtd-L4 (5.1 ssn), 90% snaps; 18 QB hits/5 sk -> 0.54 xSk; soft OL
+        8     Jalen Redmond EDGE  MIN    @ GB      4.38        80.0                            3.6 wtd-L4 (3.6 ssn), 84% snaps; 3 QB hits/1 sk -> 0.40 xSk; tough OL
+        9     Travon Walker EDGE  JAX   @ TEN      4.32        79.0       4.2 wtd-L4 (3.3 ssn), 69% snaps; 8 QB hits/3 sk -> 0.43 xSk; soft OL; big fav: pass script
+       11  Nnamdi Madubuike EDGE  BAL  vs LAC      4.27        78.0                             2.5 wtd-L4 (2.2 ssn), 72% snaps; 9 QB hits/1 sk -> 0.49 xSk; soft OL
+
+=== Top 10 LB ===
+ rank_pos             player role team matchup  proj_pts  rating_pos   flags                                                                                              reason
+        1    Jamien Sherwood   LB  NYJ  vs BUF      8.22       100.0         6.8 wtd-L4 (6.8 ssn), 98% snaps; 0.134 tkl/snap; run-heavy/tackle-friendly opp; big dog: run script
+        2       Arvell Reese   LB  NYG  vs WAS      7.77        95.0                                          14.7 wtd-L4 (10.3 ssn), 100% snaps; 0.134 tkl/snap; neutral volume
+        3 Carson Schwesinger   LB  CLE  vs HOU      7.69        94.0                                           12.3 wtd-L4 (8.2 ssn), 100% snaps; 0.150 tkl/snap; neutral volume
+        4       Frankie Luvu   LB  WAS   @ NYG      7.61        93.0                                             8.1 wtd-L4 (6.2 ssn), 98% snaps; 0.127 tkl/snap; neutral volume
+        5       David Bailey EDGE  NYJ  vs BUF      7.54        92.0 EDGE_LB   15.9 wtd-L4 (10.9 ssn), 88% snaps; 12 QB hits/7.5 sk -> 0.67 xSk; neutral OL; big dog: run script
+        6        Nakobe Dean   LB   LV  vs SEA      7.38        90.0                                            7.8 wtd-L4 (9.1 ssn), 100% snaps; 0.163 tkl/snap; neutral volume
+        7      Demario Davis   LB  NYJ  vs BUF      7.35        89.0         4.7 wtd-L4 (5.4 ssn), 99% snaps; 0.104 tkl/snap; run-heavy/tackle-friendly opp; big dog: run script
+        8        Fred Warner   LB   SF   @ DAL      7.09        86.0                              9.1 wtd-L4 (8.7 ssn), 99% snaps; 0.151 tkl/snap; run-heavy/tackle-friendly opp
+        9       Sonny Styles   LB  WAS   @ NYG      7.05        86.0                                             6.6 wtd-L4 (6.8 ssn), 93% snaps; 0.133 tkl/snap; neutral volume
+       10   Anthony Hill Jr.   LB  TEN  vs JAX      7.02        85.0                        8.1 wtd-L4 (6.0 ssn), 99% snaps; 0.146 tkl/snap; neutral volume; big dog: run script
+
+=== Top 10 DB ===
+ rank_pos             player role team matchup  proj_pts  rating_pos        flags                                                                                                        reason
+        1        Dane Belton    S  NYJ  vs BUF      5.66       100.0                                          6.0 wtd-L4 (5.4 ssn), 100% snaps; 0 INT/4 PD, 0.126 tkl/snap; big dog: run script
+        2       Jessie Bates    S  ATL   vs KC      5.49        97.0                                                               10.3 wtd-L4 (6.5 ssn), 99% snaps; 1 INT/4 PD, 0.100 tkl/snap
+        3         Nick Cross    S  WAS   @ NYG      5.36        95.0                                                                9.2 wtd-L4 (7.1 ssn), 97% snaps; 1 INT/3 PD, 0.097 tkl/snap
+        4 Minkah Fitzpatrick    S  NYJ  vs BUF      5.22        92.0     SNAPS_UP                              4.6 wtd-L4 (5.2 ssn), 97% snaps; 1 INT/3 PD, 0.124 tkl/snap; big dog: run script
+        5       Jeremy Chinn    S   LV  vs SEA      5.20        92.0                                   7.1 wtd-L4 (7.1 ssn), 100% snaps; 1 INT/2 PD, 0.108 tkl/snap; INT-prone QB (Sam Darnold)
+        6       Quentin Lake    S   LA   @ ARI      5.06        89.0              8.3 wtd-L4 (7.8 ssn), 100% snaps; 3 INT/11 PD, 0.109 tkl/snap; high WR/TE target volume; big fav: pass script
+        7       Marco Wilson   CB  CAR    @ NO      4.97        88.0 SMALL_SAMPLE                        5.0 wtd-L4 (5.2 ssn), 100% snaps; 0 INT/3 PD, 0.083 tkl/snap; high WR/TE target volume
+        8      Josh Metellus    S  MIN    @ GB      4.89        86.0                                                                4.6 wtd-L4 (4.4 ssn), 98% snaps; 0 INT/4 PD, 0.115 tkl/snap
+        9 Ronnie Hickman Jr.    S  CLE  vs HOU      4.86        86.0                                      5.3 wtd-L4 (4.8 ssn), 98% snaps; 1 INT/4 PD, 0.097 tkl/snap; high WR/TE target volume
+       10         Nick Scott    S  CAR    @ NO      4.85        86.0     SNAPS_UP                                                   5.5 wtd-L4 (4.4 ssn), 94% snaps; 0 INT/2 PD, 0.085 tkl/snap

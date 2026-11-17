@@ -1,0 +1,1454 @@
+{
+ "teams": [
+  {
+   "team_id": 1,
+   "name": "Daejon Love",
+   "manager": "Mills",
+   "record": "5-3-0",
+   "rank": 6,
+   "faab": null,
+   "players": [
+    {
+     "name": "Lamar Jackson",
+     "nfl_team": "Bal",
+     "positions": "QB",
+     "slot": "QB",
+     "status": "O"
+    },
+    {
+     "name": "Tony Pollard",
+     "nfl_team": "Ten",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Jahmyr Gibbs",
+     "nfl_team": "Det",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Tetairoa McMillan",
+     "nfl_team": "Car",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "DK Metcalf",
+     "nfl_team": "Pit",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Tyler Warren",
+     "nfl_team": "Ind",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Antonio Williams",
+     "nfl_team": "Was",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Kyler Murray",
+     "nfl_team": "Min",
+     "positions": "QB",
+     "slot": "BN",
+     "status": "Q"
+    },
+    {
+     "name": "Tyler Allgeier",
+     "nfl_team": "Ari",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Isaiah Likely",
+     "nfl_team": "NYG",
+     "positions": "TE",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Mike Evans",
+     "nfl_team": "SF",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "Q"
+    },
+    {
+     "name": "David Montgomery",
+     "nfl_team": "Hou",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "Q"
+    },
+    {
+     "name": "Samaje Perine",
+     "nfl_team": "Cin",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Evan McPherson",
+     "nfl_team": "Cin",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Evan Williams",
+     "nfl_team": "GB",
+     "positions": "DB,S",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "T.J. Watt",
+     "nfl_team": "Pit",
+     "positions": "LB,DE",
+     "slot": "LB",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 2,
+   "name": "Learn How2 Griddy Already",
+   "manager": "Milan",
+   "record": "3-5-0",
+   "rank": 10,
+   "faab": null,
+   "players": [
+    {
+     "name": "Drake Maye",
+     "nfl_team": "NE",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Jaylen Warren",
+     "nfl_team": "Pit",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "D'Andre Swift",
+     "nfl_team": "Chi",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "DJ Moore",
+     "nfl_team": "Buf",
+     "positions": "WR",
+     "slot": "WR",
+     "status": "Q"
+    },
+    {
+     "name": "Wan'Dale Robinson",
+     "nfl_team": "Ten",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Sam LaPorta",
+     "nfl_team": "Det",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Blake Corum",
+     "nfl_team": "LAR",
+     "positions": "RB",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Rome Odunze",
+     "nfl_team": "Chi",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Chris Godwin Jr.",
+     "nfl_team": "TB",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Bryce Young",
+     "nfl_team": "Car",
+     "positions": "QB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Seth McGowan",
+     "nfl_team": "Ind",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Adonai Mitchell",
+     "nfl_team": "NYJ",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Denzel Boston",
+     "nfl_team": "Cle",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Matt Gay",
+     "nfl_team": "LV",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Alex Singleton",
+     "nfl_team": "Den",
+     "positions": "LB",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Payton Wilson",
+     "nfl_team": "Pit",
+     "positions": "LB",
+     "slot": "LB",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 3,
+   "name": "4 + 9 IRs and counting",
+   "manager": "vivak",
+   "record": "0-8-0",
+   "rank": 12,
+   "faab": null,
+   "players": [
+    {
+     "name": "Kirk Cousins",
+     "nfl_team": "LV",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Zach Charbonnet",
+     "nfl_team": "Sea",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Jeremiyah Love",
+     "nfl_team": "Ari",
+     "positions": "RB",
+     "slot": "RB",
+     "status": "Q"
+    },
+    {
+     "name": "Tre Tucker",
+     "nfl_team": "LV",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "KC Concepcion Jr.",
+     "nfl_team": "Cle",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Colston Loveland",
+     "nfl_team": "Chi",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Rashee Rice",
+     "nfl_team": "KC",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Michael Mayer",
+     "nfl_team": "LV",
+     "positions": "TE",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Kyle Monangai",
+     "nfl_team": "Chi",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Brian Thomas Jr.",
+     "nfl_team": "Jax",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Jadarian Price",
+     "nfl_team": "Sea",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Ja'Kobi Lane",
+     "nfl_team": "Bal",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Spencer Shrader",
+     "nfl_team": "Ind",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Myles Garrett",
+     "nfl_team": "LAR",
+     "positions": "LB,DE",
+     "slot": "LB",
+     "status": "IR"
+    }
+   ]
+  },
+  {
+   "team_id": 4,
+   "name": "Breeces Pieces",
+   "manager": "Jason (co-manager: tom)",
+   "record": "5-3-0",
+   "rank": 5,
+   "faab": 76,
+   "players": [
+    {
+     "name": "Dak Prescott",
+     "nfl_team": "Dal",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Bucky Irving",
+     "nfl_team": "TB",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Kyren Williams",
+     "nfl_team": "LAR",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "CeeDee Lamb",
+     "nfl_team": "Dal",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Jaylen Waddle",
+     "nfl_team": "Den",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Brock Bowers",
+     "nfl_team": "LV",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Khalil Shakir",
+     "nfl_team": "Buf",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Emanuel Wilson",
+     "nfl_team": "Sea",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "TreVeyon Henderson",
+     "nfl_team": "NE",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "nfl_team": "SF",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "Q"
+    },
+    {
+     "name": "Jordyn Tyson",
+     "nfl_team": "NO",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "IR-R"
+    },
+    {
+     "name": "Hunter Henry",
+     "nfl_team": "NE",
+     "positions": "TE",
+     "slot": "BN",
+     "status": "Q"
+    },
+    {
+     "name": "Ka'imi Fairbairn",
+     "nfl_team": "Hou",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Chase McLaughlin",
+     "nfl_team": "TB",
+     "positions": "K",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Kyle Hamilton",
+     "nfl_team": "Bal",
+     "positions": "S",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Jamien Sherwood",
+     "nfl_team": "NYJ",
+     "positions": "LB",
+     "slot": "LB",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 5,
+   "name": "Eggsbuka Tyrone",
+   "manager": "Tony",
+   "record": "4-4-0",
+   "rank": 7,
+   "faab": null,
+   "players": [
+    {
+     "name": "Jared Goff",
+     "nfl_team": "Det",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Quinshon Judkins",
+     "nfl_team": "Cle",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Jonah Coleman",
+     "nfl_team": "Den",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Amon-Ra St. Brown",
+     "nfl_team": "Det",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Zay Flowers",
+     "nfl_team": "Bal",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Harold Fannin Jr.",
+     "nfl_team": "Cle",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Keon Coleman",
+     "nfl_team": "Buf",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Breece Hall",
+     "nfl_team": "NYJ",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Emeka Egbuka",
+     "nfl_team": "TB",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Xavier Worthy",
+     "nfl_team": "KC",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "J.K. Dobbins",
+     "nfl_team": "Den",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Travis Etienne Jr.",
+     "nfl_team": "NO",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "IR"
+    },
+    {
+     "name": "Tyler Bass",
+     "nfl_team": "Buf",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Demetrius Knight Jr.",
+     "nfl_team": "Cin",
+     "positions": "LB",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Roquan Smith",
+     "nfl_team": "Bal",
+     "positions": "LB",
+     "slot": "LB",
+     "status": "Q"
+    },
+    {
+     "name": "Chase Young",
+     "nfl_team": "NO",
+     "positions": "DL,DE",
+     "slot": "BN",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 6,
+   "name": "High Speed Ja\u2019Marr Chase",
+   "manager": "Joe",
+   "record": "6-2-0",
+   "rank": 2,
+   "faab": null,
+   "players": [
+    {
+     "name": "Caleb Williams",
+     "nfl_team": "Chi",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Rhamondre Stevenson",
+     "nfl_team": "NE",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Saquon Barkley",
+     "nfl_team": "Phi",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Ja'Marr Chase",
+     "nfl_team": "Cin",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Michael Wilson",
+     "nfl_team": "Ari",
+     "positions": "WR",
+     "slot": "WR",
+     "status": "Q"
+    },
+    {
+     "name": "Kyle Pitts Sr.",
+     "nfl_team": "Atl",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Matthew Golden",
+     "nfl_team": "GB",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Braelon Allen",
+     "nfl_team": "NYJ",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Aaron Jones Sr.",
+     "nfl_team": "Min",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Brock Purdy",
+     "nfl_team": "SF",
+     "positions": "QB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Davante Adams",
+     "nfl_team": "LAR",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "IR"
+    },
+    {
+     "name": "Michael Pittman Jr.",
+     "nfl_team": "Pit",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "IR"
+    },
+    {
+     "name": "Tyrone Tracy Jr.",
+     "nfl_team": "NYG",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "IR"
+    },
+    {
+     "name": "Chris Boswell",
+     "nfl_team": "Pit",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Nick Bolton",
+     "nfl_team": "KC",
+     "positions": "LB",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Byron Young",
+     "nfl_team": "LAR",
+     "positions": "LB,DE",
+     "slot": "LB",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 7,
+   "name": "Nico(demus) Brown",
+   "manager": "Nate",
+   "record": "5-3-0",
+   "rank": 3,
+   "faab": null,
+   "players": [
+    {
+     "name": "Joe Burrow",
+     "nfl_team": "Cin",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Kenneth Walker III",
+     "nfl_team": "KC",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Bhayshul Tuten",
+     "nfl_team": "Jax",
+     "positions": "RB",
+     "slot": "RB",
+     "status": "Q"
+    },
+    {
+     "name": "Luther Burden III",
+     "nfl_team": "Chi",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Malik Nabers",
+     "nfl_team": "NYG",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "T.J. Hockenson",
+     "nfl_team": "Min",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Nico Collins",
+     "nfl_team": "Hou",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Rachaad White",
+     "nfl_team": "Was",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "DeMario Douglas",
+     "nfl_team": "NE",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Josh Downs",
+     "nfl_team": "Ind",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Brenton Strange",
+     "nfl_team": "Jax",
+     "positions": "TE",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Matthew Stafford",
+     "nfl_team": "LAR",
+     "positions": "QB",
+     "slot": "BN",
+     "status": "Q"
+    },
+    {
+     "name": "Emmett Johnson",
+     "nfl_team": "KC",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Tyler Loop",
+     "nfl_team": "Bal",
+     "positions": "K",
+     "slot": "K",
+     "status": "Q"
+    },
+    {
+     "name": "Aidan Hutchinson",
+     "nfl_team": "Det",
+     "positions": "DL,DE",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Foyesade Oluokun",
+     "nfl_team": "Jax",
+     "positions": "LB",
+     "slot": "LB",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 8,
+   "name": "LONDON Bridge is Falling Down",
+   "manager": "Steve",
+   "record": "3-5-0",
+   "rank": 11,
+   "faab": null,
+   "players": [
+    {
+     "name": "Patrick Mahomes",
+     "nfl_team": "KC",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Javonte Williams",
+     "nfl_team": "Dal",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "James Cook III",
+     "nfl_team": "Buf",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Drake London",
+     "nfl_team": "Atl",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Garrett Wilson",
+     "nfl_team": "NYJ",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Pat Freiermuth",
+     "nfl_team": "Pit",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Caleb Douglas",
+     "nfl_team": "Mia",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Makai Lemon",
+     "nfl_team": "Phi",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Malachi Fields",
+     "nfl_team": "NYG",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Woody Marks",
+     "nfl_team": "Hou",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Devaughn Vele",
+     "nfl_team": "NO",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Omar Cooper Jr.",
+     "nfl_team": "NYJ",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Jacoby Brissett",
+     "nfl_team": "Ari",
+     "positions": "QB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Chad Ryland",
+     "nfl_team": "Ari",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Nakobe Dean",
+     "nfl_team": "LV",
+     "positions": "LB",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Ernest Jones IV",
+     "nfl_team": "Sea",
+     "positions": "LB",
+     "slot": "LB",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 9,
+   "name": "Psoas-spended",
+   "manager": "Alec",
+   "record": "3-5-0",
+   "rank": 8,
+   "faab": null,
+   "players": [
+    {
+     "name": "Trevor Lawrence",
+     "nfl_team": "Jax",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Chase Brown",
+     "nfl_team": "Cin",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Jonathan Taylor",
+     "nfl_team": "Ind",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Tee Higgins",
+     "nfl_team": "Cin",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Puka Nacua",
+     "nfl_team": "LAR",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Tucker Kraft",
+     "nfl_team": "GB",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Josh Jacobs",
+     "nfl_team": "GB",
+     "positions": "RB",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Jordan Love",
+     "nfl_team": "GB",
+     "positions": "QB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Germie Bernard",
+     "nfl_team": "Pit",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "DeVonta Smith",
+     "nfl_team": "Phi",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Rico Dowdle",
+     "nfl_team": "Pit",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "A.J. Brown",
+     "nfl_team": "NE",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Travis Kelce",
+     "nfl_team": "KC",
+     "positions": "TE",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Cam Little",
+     "nfl_team": "Jax",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Carson Schwesinger",
+     "nfl_team": "Cle",
+     "positions": "LB",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Blake Cashman",
+     "nfl_team": "Min",
+     "positions": "LB",
+     "slot": "LB",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 10,
+   "name": "We Are Christian Kirk",
+   "manager": "Matthew",
+   "record": "3-5-0",
+   "rank": 9,
+   "faab": null,
+   "players": [
+    {
+     "name": "Josh Allen",
+     "nfl_team": "Buf",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Derrick Henry",
+     "nfl_team": "Bal",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Ollie Gordon II",
+     "nfl_team": "Mia",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "George Pickens",
+     "nfl_team": "Dal",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Jameson Williams",
+     "nfl_team": "Det",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Chig Okonkwo",
+     "nfl_team": "Was",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Ladd McConkey",
+     "nfl_team": "LAC",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Stefon Diggs",
+     "nfl_team": "Was",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "George Kittle",
+     "nfl_team": "SF",
+     "positions": "TE",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Marvin Harrison Jr.",
+     "nfl_team": "Hou",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Alvin Kamara",
+     "nfl_team": "NO",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Elijah Mitchell",
+     "nfl_team": "Phi",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "NA"
+    },
+    {
+     "name": "Will Reichard",
+     "nfl_team": "Min",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Drake Thomas",
+     "nfl_team": "Sea",
+     "positions": "LB",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Arvell Reese",
+     "nfl_team": "NYG",
+     "positions": "LB,DE",
+     "slot": "LB",
+     "status": ""
+    },
+    {
+     "name": "Anthony Hill Jr.",
+     "nfl_team": "Ten",
+     "positions": "LB",
+     "slot": "BN",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 11,
+   "name": "Teach me how2 Griddy",
+   "manager": "Ken",
+   "record": "6-2-0",
+   "rank": 1,
+   "faab": null,
+   "players": [
+    {
+     "name": "Jayden Daniels",
+     "nfl_team": "Was",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Christian McCaffrey",
+     "nfl_team": "SF",
+     "positions": "RB",
+     "slot": "RB",
+     "status": "Q"
+    },
+    {
+     "name": "Cam Skattebo",
+     "nfl_team": "NYG",
+     "positions": "RB",
+     "slot": "RB",
+     "status": "Q"
+    },
+    {
+     "name": "Jalen Coker",
+     "nfl_team": "Car",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Parker Washington",
+     "nfl_team": "Jax",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Trey McBride",
+     "nfl_team": "Ari",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Jaxon Smith-Njigba",
+     "nfl_team": "Sea",
+     "positions": "WR",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Kenny Gainwell",
+     "nfl_team": "TB",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Omarion Hampton",
+     "nfl_team": "LAC",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Carnell Tate",
+     "nfl_team": "Ten",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Tyler Shough",
+     "nfl_team": "NO",
+     "positions": "QB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Kaelon Black",
+     "nfl_team": "SF",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Brandon Aubrey",
+     "nfl_team": "Dal",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Will Anderson Jr.",
+     "nfl_team": "Hou",
+     "positions": "DE",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Greg Rousseau",
+     "nfl_team": "Buf",
+     "positions": "LB,DE",
+     "slot": "LB",
+     "status": ""
+    },
+    {
+     "name": "Sonny Styles",
+     "nfl_team": "Was",
+     "positions": "LB",
+     "slot": "BN",
+     "status": ""
+    }
+   ]
+  },
+  {
+   "team_id": 12,
+   "name": "Run it back with Runningbacks?",
+   "manager": "T",
+   "record": "5-3-0",
+   "rank": 4,
+   "faab": null,
+   "players": [
+    {
+     "name": "Sam Darnold",
+     "nfl_team": "Sea",
+     "positions": "QB",
+     "slot": "QB",
+     "status": ""
+    },
+    {
+     "name": "Bijan Robinson",
+     "nfl_team": "Atl",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Chuba Hubbard",
+     "nfl_team": "Car",
+     "positions": "RB",
+     "slot": "RB",
+     "status": ""
+    },
+    {
+     "name": "Christian Watson",
+     "nfl_team": "GB",
+     "positions": "WR",
+     "slot": "WR",
+     "status": "Q"
+    },
+    {
+     "name": "Justin Jefferson",
+     "nfl_team": "Min",
+     "positions": "WR",
+     "slot": "WR",
+     "status": ""
+    },
+    {
+     "name": "Dalton Kincaid",
+     "nfl_team": "Buf",
+     "positions": "TE",
+     "slot": "TE",
+     "status": ""
+    },
+    {
+     "name": "Ashton Jeanty",
+     "nfl_team": "LV",
+     "positions": "RB",
+     "slot": "W/R/T",
+     "status": ""
+    },
+    {
+     "name": "Chris Olave",
+     "nfl_team": "NO",
+     "positions": "WR",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Jordan Mason",
+     "nfl_team": "Min",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Mike Washington Jr.",
+     "nfl_team": "LV",
+     "positions": "RB",
+     "slot": "BN",
+     "status": ""
+    },
+    {
+     "name": "Brian Robinson Jr.",
+     "nfl_team": "Atl",
+     "positions": "RB",
+     "slot": "BN",
+     "status": "O"
+    },
+    {
+     "name": "Jakobi Meyers",
+     "nfl_team": "Jax",
+     "positions": "WR",
+     "slot": "BN",
+     "status": "Q"
+    },
+    {
+     "name": "Harrison Butker",
+     "nfl_team": "KC",
+     "positions": "K",
+     "slot": "K",
+     "status": ""
+    },
+    {
+     "name": "Trenton Simpson",
+     "nfl_team": "Bal",
+     "positions": "LB",
+     "slot": "D",
+     "status": ""
+    },
+    {
+     "name": "Jack Campbell",
+     "nfl_team": "Det",
+     "positions": "LB",
+     "slot": "LB",
+     "status": "D"
+    },
+    {
+     "name": "Fred Warner",
+     "nfl_team": "SF",
+     "positions": "LB",
+     "slot": "BN",
+     "status": ""
+    }
+   ]
+  }
+ ]
+}

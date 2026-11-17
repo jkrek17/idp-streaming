@@ -1,0 +1,981 @@
+{
+ "week": 9,
+ "status": "Final",
+ "signin_required": false,
+ "week_final": true,
+ "matchups": [
+  {
+   "team": "Breeces Pieces",
+   "points": 148.9,
+   "opponent": "Run it back with Runningbacks?",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Run it back with Runningbacks?",
+   "points": 139.05,
+   "opponent": "Breeces Pieces",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Daejon Love",
+   "points": 130.75,
+   "opponent": "LONDON Bridge is Falling Down",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "LONDON Bridge is Falling Down",
+   "points": 101.65,
+   "opponent": "Daejon Love",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Learn How2 Griddy Already",
+   "points": 90.0,
+   "opponent": "High Speed Ja’Marr Chase",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "High Speed Ja’Marr Chase",
+   "points": 143.1,
+   "opponent": "Learn How2 Griddy Already",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "4 + 9 IRs and counting",
+   "points": 121.65,
+   "opponent": "Bunch of LOSERS",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Bunch of LOSERS",
+   "points": 84.85,
+   "opponent": "4 + 9 IRs and counting",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Eggsbuka Tyrone",
+   "points": 94.7,
+   "opponent": "Nico(demus) Brown",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Nico(demus) Brown",
+   "points": 139.3,
+   "opponent": "Eggsbuka Tyrone",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Karma",
+   "points": 145.5,
+   "opponent": "Teach me how2 Griddy",
+   "matchup_status": "Final"
+  },
+  {
+   "team": "Teach me how2 Griddy",
+   "points": 109.25,
+   "opponent": "Karma",
+   "matchup_status": "Final"
+  }
+ ],
+ "teams": [
+  {
+   "team": "Daejon Love",
+   "team_id": 1,
+   "points": 130.75,
+   "idp_points": 14.75,
+   "idp_players": [
+    {
+     "name": "Evan Williams",
+     "slot": "D",
+     "points": 9.25
+    },
+    {
+     "name": "Devin Lloyd",
+     "slot": "LB",
+     "points": 5.5
+    }
+   ],
+   "starters": [
+    {
+     "name": "C.J. Stroud",
+     "slot": "QB",
+     "points": 45.2
+    },
+    {
+     "name": "Jahmyr Gibbs",
+     "slot": "RB",
+     "points": 13.4
+    },
+    {
+     "name": "Tyler Allgeier",
+     "slot": "RB",
+     "points": 5.6
+    },
+    {
+     "name": "Tetairoa McMillan",
+     "slot": "WR",
+     "points": 13.6
+    },
+    {
+     "name": "Antonio Williams",
+     "slot": "WR",
+     "points": 4.0
+    },
+    {
+     "name": "Tyler Warren",
+     "slot": "TE",
+     "points": 6.4
+    },
+    {
+     "name": "Isaiah Likely",
+     "slot": "W/R/T",
+     "points": 13.8
+    },
+    {
+     "name": "Evan McPherson",
+     "slot": "K",
+     "points": 14.0
+    },
+    {
+     "name": "Evan Williams",
+     "slot": "D",
+     "points": 9.25
+    },
+    {
+     "name": "Devin Lloyd",
+     "slot": "LB",
+     "points": 5.5
+    }
+   ],
+   "highest_bench": {
+    "name": "Samaje Perine",
+    "points": 4.55
+   }
+  },
+  {
+   "team": "Learn How2 Griddy Already",
+   "team_id": 2,
+   "points": 90.0,
+   "idp_points": 6.75,
+   "idp_players": [
+    {
+     "name": "Alex Singleton",
+     "slot": "D",
+     "points": 2.5
+    },
+    {
+     "name": "Quincy Williams",
+     "slot": "LB",
+     "points": 4.25
+    }
+   ],
+   "starters": [
+    {
+     "name": "Drake Maye",
+     "slot": "QB",
+     "points": 24.25
+    },
+    {
+     "name": "D'Andre Swift",
+     "slot": "RB",
+     "points": 3.1
+    },
+    {
+     "name": "Blake Corum",
+     "slot": "RB",
+     "points": 11.8
+    },
+    {
+     "name": "DJ Moore",
+     "slot": "WR",
+     "points": 5.1
+    },
+    {
+     "name": "Denzel Boston",
+     "slot": "WR",
+     "points": 12.8
+    },
+    {
+     "name": "Sam LaPorta",
+     "slot": "TE",
+     "points": 5.2
+    },
+    {
+     "name": "Rome Odunze",
+     "slot": "W/R/T",
+     "points": 14.0
+    },
+    {
+     "name": "Matt Gay",
+     "slot": "K",
+     "points": 7.0
+    },
+    {
+     "name": "Alex Singleton",
+     "slot": "D",
+     "points": 2.5
+    },
+    {
+     "name": "Quincy Williams",
+     "slot": "LB",
+     "points": 4.25
+    }
+   ],
+   "highest_bench": {
+    "name": "Bryce Young",
+    "points": 24.1
+   }
+  },
+  {
+   "team": "4 + 9 IRs and counting",
+   "team_id": 3,
+   "points": 121.65,
+   "idp_points": 22.4,
+   "idp_players": [
+    {
+     "name": "Travis Hunter",
+     "slot": "D",
+     "points": 1.65
+    },
+    {
+     "name": "Myles Garrett",
+     "slot": "LB",
+     "points": 20.75
+    }
+   ],
+   "starters": [
+    {
+     "name": "Kirk Cousins",
+     "slot": "QB",
+     "points": 17.8
+    },
+    {
+     "name": "Jadarian Price",
+     "slot": "RB",
+     "points": 9.8
+    },
+    {
+     "name": "Audric Estime",
+     "slot": "RB",
+     "points": 14.2
+    },
+    {
+     "name": "KC Concepcion Jr.",
+     "slot": "WR",
+     "points": 16.8
+    },
+    {
+     "name": "Rashee Rice",
+     "slot": "WR",
+     "points": 7.4
+    },
+    {
+     "name": "Colston Loveland",
+     "slot": "TE",
+     "points": 7.4
+    },
+    {
+     "name": "Tre Tucker",
+     "slot": "W/R/T",
+     "points": 8.25
+    },
+    {
+     "name": "Spencer Shrader",
+     "slot": "K",
+     "points": 17.6
+    },
+    {
+     "name": "Travis Hunter",
+     "slot": "D",
+     "points": 1.65
+    },
+    {
+     "name": "Myles Garrett",
+     "slot": "LB",
+     "points": 20.75
+    }
+   ],
+   "highest_bench": {
+    "name": "Zach Charbonnet",
+    "points": 9.1
+   }
+  },
+  {
+   "team": "Breeces Pieces",
+   "team_id": 4,
+   "points": 148.9,
+   "idp_points": 19.25,
+   "idp_players": [
+    {
+     "name": "Quinnen Williams",
+     "slot": "D",
+     "points": 12.75
+    },
+    {
+     "name": "Andrew Van Ginkel",
+     "slot": "LB",
+     "points": 6.5
+    }
+   ],
+   "starters": [
+    {
+     "name": "Dak Prescott",
+     "slot": "QB",
+     "points": 22.85
+    },
+    {
+     "name": "Bucky Irving",
+     "slot": "RB",
+     "points": 26.5
+    },
+    {
+     "name": "Kyren Williams",
+     "slot": "RB",
+     "points": 7.6
+    },
+    {
+     "name": "CeeDee Lamb",
+     "slot": "WR",
+     "points": 28.5
+    },
+    {
+     "name": "Jaylen Waddle",
+     "slot": "WR",
+     "points": 2.7
+    },
+    {
+     "name": "Brock Bowers",
+     "slot": "TE",
+     "points": 18.8
+    },
+    {
+     "name": "Devin Singletary",
+     "slot": "W/R/T",
+     "points": 4.9
+    },
+    {
+     "name": "Ka'imi Fairbairn",
+     "slot": "K",
+     "points": 17.8
+    },
+    {
+     "name": "Quinnen Williams",
+     "slot": "D",
+     "points": 12.75
+    },
+    {
+     "name": "Andrew Van Ginkel",
+     "slot": "LB",
+     "points": 6.5
+    }
+   ],
+   "highest_bench": {
+    "name": "Khalil Shakir",
+    "points": 7.8
+   }
+  },
+  {
+   "team": "Eggsbuka Tyrone",
+   "team_id": 5,
+   "points": 94.7,
+   "idp_points": 12.0,
+   "idp_players": [
+    {
+     "name": "Chase Young",
+     "slot": "D",
+     "points": 7.5
+    },
+    {
+     "name": "Demetrius Knight Jr.",
+     "slot": "LB",
+     "points": 4.5
+    }
+   ],
+   "starters": [
+    {
+     "name": "Jared Goff",
+     "slot": "QB",
+     "points": 8.0
+    },
+    {
+     "name": "Quinshon Judkins",
+     "slot": "RB",
+     "points": 5.0
+    },
+    {
+     "name": "Jonah Coleman",
+     "slot": "RB",
+     "points": 16.8
+    },
+    {
+     "name": "Amon-Ra St. Brown",
+     "slot": "WR",
+     "points": 13.35
+    },
+    {
+     "name": "Zay Flowers",
+     "slot": "WR",
+     "points": 4.55
+    },
+    {
+     "name": "Harold Fannin Jr.",
+     "slot": "TE",
+     "points": 11.2
+    },
+    {
+     "name": "Breece Hall",
+     "slot": "W/R/T",
+     "points": 10.2
+    },
+    {
+     "name": "Tyler Bass",
+     "slot": "K",
+     "points": 13.6
+    },
+    {
+     "name": "Chase Young",
+     "slot": "D",
+     "points": 7.5
+    },
+    {
+     "name": "Demetrius Knight Jr.",
+     "slot": "LB",
+     "points": 4.5
+    }
+   ],
+   "highest_bench": {
+    "name": "Xavier Worthy",
+    "points": 7.8
+   }
+  },
+  {
+   "team": "High Speed Ja’Marr Chase",
+   "team_id": 6,
+   "points": 143.1,
+   "idp_points": 17.0,
+   "idp_players": [
+    {
+     "name": "Nick Bolton",
+     "slot": "D",
+     "points": 12.0
+    },
+    {
+     "name": "Byron Young",
+     "slot": "LB",
+     "points": 5.0
+    }
+   ],
+   "starters": [
+    {
+     "name": "Brock Purdy",
+     "slot": "QB",
+     "points": 28.6
+    },
+    {
+     "name": "Rhamondre Stevenson",
+     "slot": "RB",
+     "points": 13.3
+    },
+    {
+     "name": "Saquon Barkley",
+     "slot": "RB",
+     "points": 8.2
+    },
+    {
+     "name": "Ja'Marr Chase",
+     "slot": "WR",
+     "points": 26.5
+    },
+    {
+     "name": "Michael Wilson",
+     "slot": "WR",
+     "points": 9.0
+    },
+    {
+     "name": "Kyle Pitts Sr.",
+     "slot": "TE",
+     "points": 3.8
+    },
+    {
+     "name": "Matthew Golden",
+     "slot": "W/R/T",
+     "points": 27.4
+    },
+    {
+     "name": "Chase McLaughlin",
+     "slot": "K",
+     "points": 9.3
+    },
+    {
+     "name": "Nick Bolton",
+     "slot": "D",
+     "points": 12.0
+    },
+    {
+     "name": "Byron Young",
+     "slot": "LB",
+     "points": 5.0
+    }
+   ],
+   "highest_bench": {
+    "name": "Caleb Williams",
+    "points": 19.55
+   }
+  },
+  {
+   "team": "Nico(demus) Brown",
+   "team_id": 7,
+   "points": 139.3,
+   "idp_points": 10.25,
+   "idp_players": [
+    {
+     "name": "Aidan Hutchinson",
+     "slot": "D",
+     "points": 1.0
+    },
+    {
+     "name": "Foyesade Oluokun",
+     "slot": "LB",
+     "points": 9.25
+    }
+   ],
+   "starters": [
+    {
+     "name": "Joe Burrow",
+     "slot": "QB",
+     "points": 32.25
+    },
+    {
+     "name": "Kenneth Walker III",
+     "slot": "RB",
+     "points": 34.3
+    },
+    {
+     "name": "Bhayshul Tuten",
+     "slot": "RB",
+     "points": 8.9
+    },
+    {
+     "name": "Luther Burden III",
+     "slot": "WR",
+     "points": 17.95
+    },
+    {
+     "name": "Malik Nabers",
+     "slot": "WR",
+     "points": 6.8
+    },
+    {
+     "name": "T.J. Hockenson",
+     "slot": "TE",
+     "points": 6.05
+    },
+    {
+     "name": "Nico Collins",
+     "slot": "W/R/T",
+     "points": 13.5
+    },
+    {
+     "name": "Cairo Santos",
+     "slot": "K",
+     "points": 9.3
+    },
+    {
+     "name": "Aidan Hutchinson",
+     "slot": "D",
+     "points": 1.0
+    },
+    {
+     "name": "Foyesade Oluokun",
+     "slot": "LB",
+     "points": 9.25
+    }
+   ],
+   "highest_bench": {
+    "name": "Matthew Stafford",
+    "points": 14.5
+   }
+  },
+  {
+   "team": "LONDON Bridge is Falling Down",
+   "team_id": 8,
+   "points": 101.65,
+   "idp_points": 13.75,
+   "idp_players": [
+    {
+     "name": "Nakobe Dean",
+     "slot": "D",
+     "points": 9.5
+    },
+    {
+     "name": "Ernest Jones IV",
+     "slot": "LB",
+     "points": 4.25
+    }
+   ],
+   "starters": [
+    {
+     "name": "Patrick Mahomes",
+     "slot": "QB",
+     "points": 18.9
+    },
+    {
+     "name": "Javonte Williams",
+     "slot": "RB",
+     "points": 20.4
+    },
+    {
+     "name": "James Cook III",
+     "slot": "RB",
+     "points": 16.7
+    },
+    {
+     "name": "Drake London",
+     "slot": "WR",
+     "points": 9.3
+    },
+    {
+     "name": "Omar Cooper Jr.",
+     "slot": "WR",
+     "points": 9.8
+    },
+    {
+     "name": "Mike Gesicki",
+     "slot": "TE",
+     "points": 2.1
+    },
+    {
+     "name": "Woody Marks",
+     "slot": "W/R/T",
+     "points": 7.9
+    },
+    {
+     "name": "Chad Ryland",
+     "slot": "K",
+     "points": 2.8
+    },
+    {
+     "name": "Nakobe Dean",
+     "slot": "D",
+     "points": 9.5
+    },
+    {
+     "name": "Ernest Jones IV",
+     "slot": "LB",
+     "points": 4.25
+    }
+   ],
+   "highest_bench": {
+    "name": "Caleb Douglas",
+    "points": 10.0
+   }
+  },
+  {
+   "team": "Karma",
+   "team_id": 9,
+   "points": 145.5,
+   "idp_points": 32.25,
+   "idp_players": [
+    {
+     "name": "Carson Schwesinger",
+     "slot": "D",
+     "points": 22.75
+    },
+    {
+     "name": "Blake Cashman",
+     "slot": "LB",
+     "points": 9.5
+    }
+   ],
+   "starters": [
+    {
+     "name": "Trevor Lawrence",
+     "slot": "QB",
+     "points": 16.0
+    },
+    {
+     "name": "Chase Brown",
+     "slot": "RB",
+     "points": 9.0
+    },
+    {
+     "name": "Jonathan Taylor",
+     "slot": "RB",
+     "points": 6.9
+    },
+    {
+     "name": "Tee Higgins",
+     "slot": "WR",
+     "points": 17.7
+    },
+    {
+     "name": "Puka Nacua",
+     "slot": "WR",
+     "points": 28.75
+    },
+    {
+     "name": "Travis Kelce",
+     "slot": "TE",
+     "points": 15.3
+    },
+    {
+     "name": "Josh Jacobs",
+     "slot": "W/R/T",
+     "points": 0.5
+    },
+    {
+     "name": "Cam Little",
+     "slot": "K",
+     "points": 19.1
+    },
+    {
+     "name": "Carson Schwesinger",
+     "slot": "D",
+     "points": 22.75
+    },
+    {
+     "name": "Blake Cashman",
+     "slot": "LB",
+     "points": 9.5
+    }
+   ],
+   "highest_bench": {
+    "name": "Jordan Love",
+    "points": 39.9
+   }
+  },
+  {
+   "team": "Bunch of LOSERS",
+   "team_id": 10,
+   "points": 84.85,
+   "idp_points": 28.0,
+   "idp_players": [
+    {
+     "name": "Drake Thomas",
+     "slot": "D",
+     "points": 1.5
+    },
+    {
+     "name": "Arvell Reese",
+     "slot": "LB",
+     "points": 26.5
+    }
+   ],
+   "starters": [
+    {
+     "name": "Josh Allen",
+     "slot": "QB",
+     "points": 16.2
+    },
+    {
+     "name": "Derrick Henry",
+     "slot": "RB",
+     "points": 5.55
+    },
+    {
+     "name": "Ollie Gordon II",
+     "slot": "RB",
+     "points": 6.9
+    },
+    {
+     "name": "Jameson Williams",
+     "slot": "WR",
+     "points": 4.5
+    },
+    {
+     "name": "Ladd McConkey",
+     "slot": "WR",
+     "points": 0.0
+    },
+    {
+     "name": "George Kittle",
+     "slot": "TE",
+     "points": 7.8
+    },
+    {
+     "name": "Ryan Flournoy",
+     "slot": "W/R/T",
+     "points": 6.3
+    },
+    {
+     "name": "Will Reichard",
+     "slot": "K",
+     "points": 9.6
+    },
+    {
+     "name": "Drake Thomas",
+     "slot": "D",
+     "points": 1.5
+    },
+    {
+     "name": "Arvell Reese",
+     "slot": "LB",
+     "points": 26.5
+    }
+   ],
+   "highest_bench": {
+    "name": "Stefon Diggs",
+    "points": 6.6
+   }
+  },
+  {
+   "team": "Teach me how2 Griddy",
+   "team_id": 11,
+   "points": 109.25,
+   "idp_points": 18.75,
+   "idp_players": [
+    {
+     "name": "Will Anderson Jr.",
+     "slot": "D",
+     "points": 10.5
+    },
+    {
+     "name": "Greg Rousseau",
+     "slot": "LB",
+     "points": 8.25
+    }
+   ],
+   "starters": [
+    {
+     "name": "Jayden Daniels",
+     "slot": "QB",
+     "points": 17.3
+    },
+    {
+     "name": "Christian McCaffrey",
+     "slot": "RB",
+     "points": 21.7
+    },
+    {
+     "name": "Omarion Hampton",
+     "slot": "RB",
+     "points": 6.0
+    },
+    {
+     "name": "Jalen Coker",
+     "slot": "WR",
+     "points": 4.6
+    },
+    {
+     "name": "Parker Washington",
+     "slot": "WR",
+     "points": 13.1
+    },
+    {
+     "name": "Trey McBride",
+     "slot": "TE",
+     "points": 8.9
+    },
+    {
+     "name": "Jaxon Smith-Njigba",
+     "slot": "W/R/T",
+     "points": 8.6
+    },
+    {
+     "name": "Brandon Aubrey",
+     "slot": "K",
+     "points": 10.3
+    },
+    {
+     "name": "Will Anderson Jr.",
+     "slot": "D",
+     "points": 10.5
+    },
+    {
+     "name": "Greg Rousseau",
+     "slot": "LB",
+     "points": 8.25
+    }
+   ],
+   "highest_bench": {
+    "name": "Tyler Shough",
+    "points": 22.35
+   }
+  },
+  {
+   "team": "Run it back with Runningbacks?",
+   "team_id": 12,
+   "points": 139.05,
+   "idp_points": 18.5,
+   "idp_players": [
+    {
+     "name": "Devin Bush",
+     "slot": "D",
+     "points": 7.25
+    },
+    {
+     "name": "Fred Warner",
+     "slot": "LB",
+     "points": 11.25
+    }
+   ],
+   "starters": [
+    {
+     "name": "Bo Nix",
+     "slot": "QB",
+     "points": 19.05
+    },
+    {
+     "name": "Bijan Robinson",
+     "slot": "RB",
+     "points": 23.7
+    },
+    {
+     "name": "Chuba Hubbard",
+     "slot": "RB",
+     "points": 11.6
+    },
+    {
+     "name": "Christian Watson",
+     "slot": "WR",
+     "points": 26.6
+    },
+    {
+     "name": "Chris Olave",
+     "slot": "WR",
+     "points": 13.3
+    },
+    {
+     "name": "AJ Barner",
+     "slot": "TE",
+     "points": 14.0
+    },
+    {
+     "name": "Justin Jefferson",
+     "slot": "W/R/T",
+     "points": 7.3
+    },
+    {
+     "name": "Harrison Butker",
+     "slot": "K",
+     "points": 5.0
+    },
+    {
+     "name": "Devin Bush",
+     "slot": "D",
+     "points": 7.25
+    },
+    {
+     "name": "Fred Warner",
+     "slot": "LB",
+     "points": 11.25
+    }
+   ],
+   "highest_bench": {
+    "name": "Jakobi Meyers",
+    "points": 8.5
+   }
+  }
+ ],
+ "highest_player": {
+  "name": "C.J. Stroud",
+  "team": "Daejon Love",
+  "points": 45.2,
+  "slot": "QB"
+ },
+ "highest_defense": {
+  "team": "Karma",
+  "points": 32.25
+ },
+ "notes": "Scoreboard header 'Week 9 Matchups Final results'; all players' games Final. Team names differ from expected list: Yahoo shows 'Bunch of LOSERS' (team 10) and 'Karma' (team 9); expected names 'We Are Christian Kirk' and 'Psoas-spended' do not appear (likely renamed; mapping not verified); Yahoo also uses curly apostrophe in 'High Speed Ja’Marr Chase'. Injury tags (Q/O/IR/D/NA) stripped from player names. Highest bench score in league: Jordan Love (Karma BN) 39.90, below C.J. Stroud 45.20. Starter sums match matchup totals for all 12 teams. Bye players excluded. "
+}

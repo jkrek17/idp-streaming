@@ -1,0 +1,2 @@
+Week 10 IDP streaming (private, generated Tue Nov 10 2026 ~9:30 ET). Sources: Yahoo 54162 read-only (yahoo_league_week10_raw.md), nflverse thru wk9 (ratings_week10.csv, boom_week10.csv, matchup_view_week10.csv via mv10.py, week10_final.csv), Jets/Jaguars team sites.
+Top 3: David Bailey (LB slot over Van Ginkel), Jamien Sherwood (D slot over Q. Williams), Carl Granderson (fallback). All on waivers clearing Wed Nov 11.

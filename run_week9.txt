@@ -1,0 +1,241 @@
+/workspace/idp/idp_ratings.py:396: Pandas4Warning: 'ArrowStringArray' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  T["team"] = T.gsis_id.map(ros.team).fillna(T.stat_team)
+/workspace/idp/idp_ratings.py:487: Pandas4Warning: 'str' is not supported as a fill value for float64 dtype. In a future version, calling fillna with an incompatible value will raise. Explicitly cast to a common dtype before filling.
+  dnp = T.inj_practice.fillna("").str.startswith("Did Not")
+Season 2026, target week 9. Generated 2026-11-03 07:37 ET
+Data through week: {'ps': 8, 'snaps': 8, 'pbp': 8} | rosters/injuries week: 8 8
+Bye teams: PIT, TEN
+Wrote 688 players -> /workspace/idp/ratings_week9.csv
+
+Opponent OL pass-pro index (>1 = easier for pass rushers):
+         pr_idx  sack_rate_adj  hit_rate_adj  stuff_rate_adj   db_pg  ol_missing  pr_idx_inj                                            missing
+posteam                                                                                                                                        
+CLE       1.316          0.088         0.185           0.200  40.778         0.0       1.316                                                   
+BAL       1.195          0.076         0.178           0.194  34.434         1.6       1.291    Emery Jones (DNP W8); Olaivavega Ioane (DNP W8)
+IND       1.170          0.075         0.173           0.187  37.875         0.8       1.216                            Quenton Nelson (DNP W8)
+LAC       1.148          0.076         0.164           0.189  37.114         0.8       1.194                               Alex Harkey (DNP W8)
+CAR       1.158          0.078         0.163           0.169  43.116         0.4       1.181                       Corey Bullock (56% snaps W8)
+WAS       1.114          0.068         0.173           0.190  38.078         0.8       1.159                               Matt Gulbin (DNP W8)
+SEA       1.061          0.064         0.166           0.186  37.382         1.6       1.146  Charles Cross (DNP W8); Christian Haynes (DNP W8)
+NYJ       1.083          0.071         0.157           0.199  33.709         0.8       1.126                           Jordan Meredith (DNP W8)
+MIA       1.063          0.076         0.139           0.199  32.191         0.8       1.106                             Kadyn Proctor (DNP W8)
+ARI       1.077          0.063         0.174           0.189  46.041         0.4       1.099                     Jayden Williams (60% snaps W8)
+PHI       1.095          0.072         0.158           0.223  40.090         0.0       1.095                                                   
+NYG       1.095          0.070         0.162           0.184  39.211         0.0       1.095                                                   
+MIN       1.085          0.073         0.152           0.178  33.226         0.0       1.085                                                   
+TB        1.051          0.070         0.149           0.160  26.629         0.0       1.051                                                   
+JAX       0.994          0.062         0.151           0.160  31.663         0.4       1.014                      Ezra Cleveland (35% snaps W8)
+DET       0.992          0.063         0.148           0.190  35.765         0.4       1.012                       Juice Scruggs (69% snaps W8)
+CIN       0.964          0.053         0.164           0.173  42.474         0.0       0.964                                                   
+LV        0.917          0.050         0.157           0.215  38.452         0.8       0.953                              Caleb Rogers (DNP W8)
+BUF       0.913          0.056         0.141           0.161  34.376         0.8       0.949                             Spencer Brown (DNP W8)
+CHI       0.946          0.060         0.141           0.186  39.036         0.0       0.946                                                   
+NE        0.926          0.059         0.138           0.164  33.902         0.4       0.945                           Ben Brown (57% snaps W8)
+NO        0.881          0.052         0.142           0.195  39.686         0.8       0.916                                Cesar Ruiz (DNP W7)
+GB        0.836          0.047         0.140           0.192  41.187         1.6       0.903        Travis Glover (DNP W8); Sean Rhyan (DNP W8)
+KC        0.903          0.048         0.157           0.168  37.071         0.0       0.903                                                   
+HOU       0.891          0.056         0.134           0.187  35.843         0.0       0.891                                                   
+LA        0.867          0.052         0.138           0.136  37.681         0.0       0.867                                                   
+DAL       0.866          0.050         0.142           0.175  40.603         0.0       0.866                                                   
+SF        0.864          0.053         0.134           0.170  34.406         0.0       0.864                                                   
+ATL       0.855          0.057         0.120           0.176  31.268         0.0       0.855                                                   
+DEN       0.800          0.051         0.119           0.169  33.209         0.0       0.800                                                   
+
+=== Top 10 DL ===
+ rank_pos            player role team matchup  proj_pts  rating_pos flags                                                                                         reason
+        1  George Karlaftis EDGE   KC  vs NYJ      5.66       100.0          9.1 wtd-L4 (6.4 ssn), 82% snaps; 16 QB hits/2 sk -> 0.58 xSk; soft OL; big fav: pass script
+        2  Quinnen Williams EDGE  DAL   @ IND      5.47        97.0          10.1 wtd-L4 (6.6 ssn), 62% snaps; 8 QB hits/5 sk -> 0.55 xSk; soft OL; big fav: pass script
+        3 Will Anderson Jr. EDGE  HOU   @ LAC      5.41        96.0                              4.7 wtd-L4 (9.1 ssn), 77% snaps; 15 QB hits/7.5 sk -> 0.60 xSk; soft OL
+        4  Aidan Hutchinson EDGE  DET   @ MIA      5.30        94.0       4.1 wtd-L4 (5.7 ssn), 90% snaps; 17 QB hits/5 sk -> 0.62 xSk; neutral OL; big fav: pass script
+        5   Jeffery Simmons  IDL  CHI   vs TB      5.23        92.0         9.2 wtd-L4 (7.6 ssn), 88% snaps; 10 QB hits/5 sk -> 0.33 xSk; tough OL; big fav: pass script
+        6   Carl Granderson EDGE   NO  vs CLE      4.98        88.0                               7.0 wtd-L4 (6.1 ssn), 68% snaps; 7 QB hits/5.5 sk -> 0.65 xSk; soft OL
+        7       Chase Young EDGE   NO  vs CLE      4.94        87.0                                5.9 wtd-L4 (6.3 ssn), 71% snaps; 11 QB hits/7 sk -> 0.71 xSk; soft OL
+        8         Boye Mafe EDGE  CIN   @ ATL      4.92        87.0                              9.9 wtd-L4 (7.2 ssn), 76% snaps; 8 QB hits/5.5 sk -> 0.41 xSk; tough OL
+       10      Jalen Carter EDGE  PHI  vs NYG      4.83        85.0                              6.1 wtd-L4 (6.4 ssn), 86% snaps; 3 QB hits/4 sk -> 0.41 xSk; neutral OL
+        9  Josh Hines-Allen EDGE  JAX   @ BAL      4.83        85.0           4.3 wtd-L4 (4.8 ssn), 75% snaps; 9 QB hits/2 sk -> 0.49 xSk; soft OL; big fav: pass script
+
+=== Top 10 LB ===
+ rank_pos          player role team matchup  proj_pts  rating_pos flags                                                                                                reason
+        1   Blake Cashman   LB  MIN  vs BUF      8.83       100.0                             10.4 wtd-L4 (9.1 ssn), 97% snaps; 0.156 tkl/snap; run-heavy/tackle-friendly opp
+        2    Ernest Jones   LB  SEA  vs ARI      8.16        92.0       7.0 wtd-L4 (7.9 ssn), 100% snaps; 0.161 tkl/snap; run-heavy/tackle-friendly opp; big fav: pass script
+        3  Alex Singleton   LB  DEN   @ CAR      8.00        91.0                                           11.3 wtd-L4 (8.0 ssn), 100% snaps; 0.170 tkl/snap; low-volume opp
+        4  Josiah Trotter   LB   TB   @ CHI      7.04        80.0         4.3 wtd-L4 (7.7 ssn), 92% snaps; 0.173 tkl/snap; run-heavy/tackle-friendly opp; big dog: run script
+        5     Nakobe Dean   LB   LV    @ SF      6.97        79.0        6.9 wtd-L4 (9.1 ssn), 100% snaps; 0.152 tkl/snap; run-heavy/tackle-friendly opp; big dog: run script
+        6     Fred Warner   LB   SF   vs LV      6.96        79.0                       7.5 wtd-L4 (8.3 ssn), 98% snaps; 0.157 tkl/snap; neutral volume; big fav: pass script
+        7   Jordyn Brooks   LB  MIA  vs DET      6.95        79.0         5.8 wtd-L4 (4.8 ssn), 91% snaps; 0.156 tkl/snap; run-heavy/tackle-friendly opp; big dog: run script
+        8 Jacob Rodriguez   LB  MIA  vs DET      6.91        78.0         5.5 wtd-L4 (6.6 ssn), 99% snaps; 0.160 tkl/snap; run-heavy/tackle-friendly opp; big dog: run script
+        9     Eric Wilson   LB  MIN  vs BUF      6.90        78.0                              6.8 wtd-L4 (5.5 ssn), 94% snaps; 0.101 tkl/snap; run-heavy/tackle-friendly opp
+       10 Quincy Williams   LB  CLE    @ NO      6.82        77.0                                            10.1 wtd-L4 (7.9 ssn), 98% snaps; 0.110 tkl/snap; neutral volume
+
+=== Top 10 DB ===
+ rank_pos               player role team matchup  proj_pts  rating_pos    flags                                                                                                                                      reason
+        1    Carlton Davis III   CB   NE   vs GB      6.44       100.0                                    5.1 wtd-L4 (4.7 ssn), 95% snaps; 0 INT/1 PD, 0.111 tkl/snap; INT-prone QB (Jordan Love); high WR/TE target volume
+        2        Jacob Parrish   CB   TB   @ CHI      6.42       100.0                                                                    8.5 wtd-L4 (7.4 ssn), 94% snaps; 2 INT/13 PD, 0.094 tkl/snap; big dog: run script
+        3    Devon Witherspoon   CB  SEA  vs ARI      6.30        98.0          4.4 wtd-L4 (4.5 ssn), 99% snaps; 0 INT/3 PD, 0.098 tkl/snap; INT-prone QB (Gardner Minshew); high WR/TE target volume; big fav: pass script
+        4        Evan Williams    S   GB    @ NE      6.28        98.0                                                              7.0 wtd-L4 (7.9 ssn), 100% snaps; 2 INT/6 PD, 0.127 tkl/snap; INT-prone QB (Drake Maye)
+        5        Josh Metellus    S  MIN  vs BUF      6.06        94.0                                                                4.9 wtd-L4 (4.5 ssn), 99% snaps; 0 INT/4 PD, 0.117 tkl/snap; high WR/TE target volume
+        6      Kamari Lassiter   CB  HOU   @ LAC      6.05        94.0                                                          6.9 wtd-L4 (5.8 ssn), 100% snaps; 0 INT/5 PD, 0.096 tkl/snap; INT-prone QB (Justin Herbert)
+        7          Dane Belton    S  NYJ    @ KC      5.95        92.0                                                                    7.4 wtd-L4 (5.7 ssn), 100% snaps; 0 INT/4 PD, 0.126 tkl/snap; big dog: run script
+        9       Nick Emmanwori    S  SEA  vs ARI      5.89        91.0 SNAPS_UP 3.4 wtd-L4 (4.4 ssn), 86% snaps; 0 INT/1 PD, 0.096 tkl/snap; INT-prone QB (Gardner Minshew); high WR/TE target volume; big fav: pass script
+        8 Antoine Winfield Jr.    S   TB   @ CHI      5.89        91.0                                           5.0 wtd-L4 (4.5 ssn), 96% snaps; 0 INT/0 PD, 0.109 tkl/snap; high WR/TE target volume; big dog: run script
+       10          Budda Baker    S  ARI   @ SEA      5.87        91.0                                         6.3 wtd-L4 (7.0 ssn), 99% snaps; 1 INT/4 PD, 0.102 tkl/snap; INT-prone QB (Sam Darnold); big dog: run script
+
+=== LB slot: starter Jamien Sherwood @ KC mean 6.56 P10 2.75 P90 11.5 P10+ 17.2% P12+ 9.0% ===
+-- safe --
+ slot_rank          player team yahoo_pos role matchup waiver yahoo_tag  mean  floor_p10   p90  p_ge10  p_ge12  median_ppg games_ge6
+         1  Josiah Trotter   TB        LB   LB   @ CHI      W            7.04       3.00 12.00   0.199   0.104       5.750       3/7
+         2 Jacob Rodriguez  MIA        LB   LB  vs DET      W            6.91       2.75 12.00   0.201   0.105       6.000       4/7
+         3   Jordyn Brooks  MIA        LB   LB  vs DET      W            6.95       2.75 11.75   0.193   0.100       5.250       2/7
+         4     Eric Wilson  MIN        LB   LB  vs BUF      W            6.90       2.50 12.25   0.203   0.116       3.250       2/7
+         5 Quincy Williams  CLE        LB   LB    @ NO      W            6.82       2.50 12.00   0.187   0.105       6.125       4/8
+         6      Devin Bush  CHI        LB   LB   vs TB      W            6.62       2.50 11.75   0.182   0.097       5.375       3/8
+         7       Zack Baun  PHI        LB   LB  vs NYG      W            6.35       2.50 11.25   0.159   0.082       5.750       3/7
+         8    Nate Landman   LA        LB   LB   @ WAS      W            6.29       2.50 11.00   0.146   0.071       5.500       2/7
+         9  Barrett Carter  CIN        LB   LB   @ ATL      W            6.23       2.25 11.00   0.148   0.072       5.500       3/7
+        10 Azeez Al-Shaair  HOU        LB   LB   @ LAC      W            6.29       2.25 11.50   0.167   0.092       4.875       3/6
+-- boom --
+ slot_rank            player team yahoo_pos role matchup waiver yahoo_tag  mean  floor_p10   p90  p_ge10  p_ge12  median_ppg games_ge6
+         1       Eric Wilson  MIN        LB   LB  vs BUF      W            6.90       2.50 12.25   0.203   0.116       3.250       2/7
+         2   Jacob Rodriguez  MIA        LB   LB  vs DET      W            6.91       2.75 12.00   0.201   0.105       6.000       4/7
+         3    Josiah Trotter   TB        LB   LB   @ CHI      W            7.04       3.00 12.00   0.199   0.104       5.750       3/7
+         4     Jordyn Brooks  MIA        LB   LB  vs DET      W            6.95       2.75 11.75   0.193   0.100       5.250       2/7
+         5   Quincy Williams  CLE        LB   LB    @ NO      W            6.82       2.50 12.00   0.187   0.105       6.125       4/8
+         6        Devin Bush  CHI        LB   LB   vs TB      W            6.62       2.50 11.75   0.182   0.097       5.375       3/8
+         7   Azeez Al-Shaair  HOU        LB   LB   @ LAC      W            6.29       2.25 11.50   0.167   0.092       4.875       3/6
+         8 Andrew Van Ginkel  MIN     LB,DE EDGE  vs BUF      W            5.66       1.25 11.75   0.162   0.099       7.750       5/7
+         9         Zack Baun  PHI        LB   LB  vs NYG      W            6.35       2.50 11.25   0.159   0.082       5.750       3/7
+        10   Carl Granderson   NO     LB,DE EDGE  vs CLE      W            4.98       0.75 11.75   0.157   0.096       6.125       4/6
+
+=== D slot: starter Kyle Hamilton vs JAX mean 5.29 P10 1.75 P90 9.75 P10+ 9.8% P12+ 4.4% ===
+-- safe --
+ slot_rank          player team yahoo_pos role matchup waiver yahoo_tag  mean  floor_p10   p90  p_ge10  p_ge12  median_ppg games_ge6
+         1  Josiah Trotter   TB        LB   LB   @ CHI      W            7.04       3.00 12.00   0.199   0.104       5.750       3/7
+         2 Jacob Rodriguez  MIA        LB   LB  vs DET      W            6.91       2.75 12.00   0.201   0.105       6.000       4/7
+         3   Jordyn Brooks  MIA        LB   LB  vs DET      W            6.95       2.75 11.75   0.193   0.100       5.250       2/7
+         4     Eric Wilson  MIN        LB   LB  vs BUF      W            6.90       2.50 12.25   0.203   0.116       3.250       2/7
+         5 Quincy Williams  CLE        LB   LB    @ NO      W            6.82       2.50 12.00   0.187   0.105       6.125       4/8
+         6      Devin Bush  CHI        LB   LB   vs TB      W            6.62       2.50 11.75   0.182   0.097       5.375       3/8
+         7       Zack Baun  PHI        LB   LB  vs NYG      W            6.35       2.50 11.25   0.159   0.082       5.750       3/7
+         8    Nate Landman   LA        LB   LB   @ WAS      W            6.29       2.50 11.00   0.146   0.071       5.500       2/7
+         9  Barrett Carter  CIN        LB   LB   @ ATL      W            6.23       2.25 11.00   0.148   0.072       5.500       3/7
+        10 Azeez Al-Shaair  HOU        LB   LB   @ LAC      W            6.29       2.25 11.50   0.167   0.092       4.875       3/6
+-- boom --
+ slot_rank            player team yahoo_pos role matchup waiver yahoo_tag  mean  floor_p10   p90  p_ge10  p_ge12  median_ppg games_ge6
+         1       Eric Wilson  MIN        LB   LB  vs BUF      W            6.90       2.50 12.25   0.203   0.116       3.250       2/7
+         2   Jacob Rodriguez  MIA        LB   LB  vs DET      W            6.91       2.75 12.00   0.201   0.105       6.000       4/7
+         3    Josiah Trotter   TB        LB   LB   @ CHI      W            7.04       3.00 12.00   0.199   0.104       5.750       3/7
+         4     Jordyn Brooks  MIA        LB   LB  vs DET      W            6.95       2.75 11.75   0.193   0.100       5.250       2/7
+         5   Quincy Williams  CLE        LB   LB    @ NO      W            6.82       2.50 12.00   0.187   0.105       6.125       4/8
+         6        Devin Bush  CHI        LB   LB   vs TB      W            6.62       2.50 11.75   0.182   0.097       5.375       3/8
+         7   Azeez Al-Shaair  HOU        LB   LB   @ LAC      W            6.29       2.25 11.50   0.167   0.092       4.875       3/6
+         8 Andrew Van Ginkel  MIN     LB,DE EDGE  vs BUF      W            5.66       1.25 11.75   0.162   0.099       7.750       5/7
+         9  George Karlaftis   KC        DE EDGE  vs NYJ      W            5.66       1.00 12.00   0.162   0.104       4.750       3/7
+        10         Zack Baun  PHI        LB   LB  vs NYG      W            6.35       2.50 11.25   0.159   0.082       5.750       3/7
+
+Parsed 150 Yahoo-listed players, matched 139; unmatched: 11
+        player_y team_y yahoo_pos yahoo_tag
+     Nick Herbig    PIT     LB,DE          
+DeForest Buckner     SF        DT          
+James Pearce Jr.    ATL     LB,DE          
+  Alex Highsmith    PIT     LB,DE          
+ Cameron Heyward    PIT     DT,DE          
+     Nick Herbig    PIT     LB,DE          
+     Cedric Gray    TEN        LB          
+   Patrick Queen    PIT        LB          
+  Alontae Taylor    TEN        CB          
+  Jaquan Brisker    PIT      DB,S          
+  DeShon Elliott    PIT         S          
+unmatched yahoo offense: ['Joe Milton', 'James Conner', 'Kaytron Allen']
+roster ids: {'Dak Prescott': '00-0033077', 'Bucky Irving': '00-0039361', 'Kyren Williams': '00-0037840', 'CeeDee Lamb': '00-0036358', 'Jaylen Waddle': '00-0036613', 'Brock Bowers': '00-0039338', 'Khalil Shakir': '00-0037261', "Ka'imi Fairbairn": '00-0032726', 'Emanuel Wilson': '00-0038797', 'TreVeyon Henderson': '00-0040734', 'Deebo Samuel': '00-0035719', 'Jordyn Tyson': nan, 'Hunter Henry': '00-0033090', 'Chase McLaughlin': '00-0035358'}
+wrote offense/lineup/waivers/dashboard_data for week 9; players=535 json=70KB
+SAFE: {'QB': ['Dak Prescott'], 'RB': ['Kyren Williams', 'Bucky Irving'], 'WR': ['CeeDee Lamb', 'Jaylen Waddle'], 'TE': ['Brock Bowers'], 'W/R/T': ['Emanuel Wilson'], 'K': ["Ka'imi Fairbairn"]}
+BOOM: {'QB': ['Dak Prescott'], 'RB': ['Kyren Williams', 'Bucky Irving'], 'WR': ['CeeDee Lamb', 'Jaylen Waddle'], 'TE': ['Brock Bowers'], 'W/R/T': ['Emanuel Wilson'], 'K': ["Ka'imi Fairbairn"]}
+                   pos matchup   mean  floor    p90  p_boom grade  ros_ppg byes  start_safe  start_boom
+player                                                                                                 
+Dak Prescott        QB   @ IND  21.44   9.68  35.82    0.30     A    19.27   14        True        True
+Bucky Irving        RB   @ CHI  13.34   3.66  25.71    0.20     D    15.47   10        True        True
+Kyren Williams      RB   @ WAS  14.44   4.38  27.21    0.23     B    13.15   11        True        True
+CeeDee Lamb         WR   @ IND  15.23   2.99  30.45    0.27     C    15.16   14        True        True
+Jaylen Waddle       WR   @ CAR   6.82   0.70  14.74    0.03    C-     7.22   10        True        True
+Brock Bowers        TE    @ SF  13.33   2.60  26.12    0.35     C    12.77   13        True        True
+Khalil Shakir       WR   @ MIN   6.20   0.00  13.75    0.03     D     6.95            False       False
+Ka'imi Fairbairn     K   @ LAC   9.76   2.00  18.60    0.33     C    10.02             True        True
+Emanuel Wilson      RB  vs ARI   6.43   0.00  17.31    0.07    C-     9.27   11        True        True
+TreVeyon Henderson  RB       -   0.00   0.00   0.00    0.00           4.38   11       False       False
+Deebo Samuel        WR   vs LV   5.45   0.00  13.01    0.02     A     5.70            False       False
+Jordyn Tyson        WR       -   0.00   0.00   0.00    0.00           0.00            False       False
+Hunter Henry        TE   vs GB   4.96   0.00  12.40    0.06     F     7.48   11       False       False
+Chase McLaughlin     K   @ CHI   9.52   2.00  18.60    0.31     C    10.65   10       False       False
+bars {'QB': np.float64(19.27143295104792), 'TE': np.float64(12.77268196192995), 'K': np.float64(10.649494004049847), 'RB': 9.27448975464009, 'WR': np.float64(7.21658043501566)} wk_bar {'QB': np.float64(21.437188341394254), 'RB': np.float64(6.428539907919746), 'WR': np.float64(6.819745432313694), 'TE': np.float64(13.331939388272597), 'K': np.float64(9.75799999999998)}
+Move Jordyn Tyson to an IR slot (Yahoo IR; frees a bench spot, no drop needed).
+Drop candidate: Chase McLaughlin (2nd K, @ CHI wk9, ROS 10.6/g); one K is enough outside bye weeks.
+Low-value bench: TreVeyon Henderson ROS 4.4/g (-).
+Low-value bench: Deebo Samuel ROS 5.7/g (vs LV).
+Low-value bench: Khalil Shakir ROS 7.0/g (@ MIN).
+['QB: Dak Prescott bye wk 14 - stream that week']
+   pos              player team waiver   pct    ros_ppg  week_mean  gain_ros_ppg  gain_week                       verdict                  faab
+16  RB       Dameon Pierce  PHI      W  21.0  10.166470   0.000000          0.89      -6.43             clear ROS upgrade  $3-8 (4%-10% of $76)
+34  WR    Malik Washington  MIA      W  48.0   7.621755   8.365981          0.41       1.55  toss-up (within model error)     $0-1 (depth only)
+35  WR       Ryan Flournoy  DAL      W  34.0   7.580025   7.442951          0.36       0.62  toss-up (within model error)     $0-1 (depth only)
+38  WR        Keenan Allen  IND      W  52.0   7.257630   7.680052          0.04       0.86  toss-up (within model error)     $0-1 (depth only)
+0   QB         C.J. Stroud  HOU      W  76.0  18.863176  18.504211         -0.41      -2.93               depth/bye cover     $0-1 (depth only)
+41  WR        Mack Hollins   NE      W   2.0   6.745151   0.000000         -0.47      -6.82               depth/bye cover     $0-1 (depth only)
+1   QB      Deshaun Watson  CLE      W  12.0  18.789044  19.121875         -0.48      -2.32               depth/bye cover     $0-1 (depth only)
+43  WR       Treylon Burks  WAS      W   2.0   6.611651   6.126772         -0.60      -0.69               depth/bye cover     $0-1 (depth only)
+17   K        Drew Stevens  WAS      W  11.0   9.929925   9.361700         -0.72      -0.40               depth/bye cover     $0-1 (depth only)
+18   K         Jason Myers  SEA      W  91.0   9.849755  10.506680         -0.80       0.75               week-9 streamer     $0-1 (depth only)
+25  RB       Kendre Miller   NO      W  24.0   8.356463   8.834550         -0.92       2.41               week-9 streamer     $0-1 (depth only)
+19   K          Jake Bates  DET      W  65.0   9.715632  10.871500         -0.93       1.11               week-9 streamer     $0-1 (depth only)
+47  WR      Jordan Addison  MIN      W  71.0   6.270570   5.938914         -0.95      -0.88               depth/bye cover     $0-1 (depth only)
+20   K            Wil Lutz  DEN      W  15.0   9.608803   9.162600         -1.04      -0.60               depth/bye cover     $0-1 (depth only)
+21   K       Dominic Zvada  NYG      W   2.0   9.580738   9.205300         -1.07      -0.55               depth/bye cover     $0-1 (depth only)
+2   QB          Geno Smith  NYJ      W  23.0  18.150724  18.661065         -1.12      -2.78               depth/bye cover     $0-1 (depth only)
+27  RB  J. Croskey-Merritt  WAS      W  57.0   8.146129   0.000000         -1.13      -6.43               depth/bye cover     $0-1 (depth only)
+22   K        Cairo Santos  CHI      W  43.0   9.484208   9.870720         -1.17       0.11               depth/bye cover     $0-1 (depth only)
+49  WR         Jaylin Noel  HOU      W   8.0   5.869353   0.000000         -1.35      -6.82               depth/bye cover     $0-1 (depth only)
+50  WR        Jahan Dotson  ATL      W   2.0   5.790177   6.287450         -1.43      -0.53               depth/bye cover     $0-1 (depth only)
+3   QB              Bo Nix  DEN      W  65.0  17.545706  16.443422         -1.73      -4.99               depth/bye cover     $0-1 (depth only)
+4   QB      Justin Herbert  LAC      W  44.0  17.447755  16.689718         -1.82      -4.75               depth/bye cover     $0-1 (depth only)
+57  WR         Romeo Doubs   NE      W  43.0   5.324076   0.000000         -1.89      -6.82               depth/bye cover     $0-1 (depth only)
+58  WR       Elic Ayomanor  TEN      W   4.0   5.300359   0.000000         -1.92      -6.82               depth/bye cover     $0-1 (depth only)
+23   K      Cameron Dicker  LAC      W  31.0   8.710574   8.348360         -1.94      -1.41               depth/bye cover     $0-1 (depth only)
+            player_y team yahoo_pos waiver  proj_pts  ros_total  gain_ros_ppg                    faab
+59     Jordyn Brooks  MIA        LB      W      6.95      62.55          1.66  $8-15 (10%-20% of $76)
+51   Jacob Rodriguez  MIA        LB      W      6.91      62.19          1.62  $8-15 (10%-20% of $76)
+71       Eric Wilson  MIN        LB      W      6.90      62.10          1.61  $8-15 (10%-20% of $76)
+54   Azeez Al-Shaair  HOU        LB      W      6.29      56.61          1.00    $3-8 (4%-10% of $76)
+76    Josiah Trotter   TB        LB      W      7.04      56.32          1.75  $8-15 (10%-20% of $76)
+87    Barrett Carter  CIN        LB      W      6.23      56.07          0.94    $3-8 (4%-10% of $76)
+64   Quincy Williams  CLE        LB      W      6.82      54.56          1.53  $8-15 (10%-20% of $76)
+105  Kamari Lassiter  HOU     DB,CB      W      6.05      54.45          0.76    $3-8 (4%-10% of $76)
+63     Bobby Okereke  CAR        LB      W      5.98      53.82          0.69    $3-8 (4%-10% of $76)
+56      Kaden Elliss   NO        LB      W      5.96      53.64          0.67    $3-8 (4%-10% of $76)
+69        Devin Bush  CHI        LB      W      6.62      52.96          1.33    $3-8 (4%-10% of $76)
+106    Jordan Battle  CIN         S      W      5.81      52.29          0.52    $3-8 (4%-10% of $76)
+173 31213
+  projections 9-17: 49s
+  unmatched rostered players (projected 0): Jordyn Tyson (NO)
+  playoff odds: T1 78%, T2 12%, T3 0%, T4 73%, T5 39%, T6 87%, T7 85%, T8 12%, T9 42%, T10 13%, T11 86%, T12 72%
+  searched 66 pairs in 76s (2360 full evals), 435 trades with both sides gaining
+  balance distribution of win-win trades (min/max): {0.25: 0.13, 0.5: 0.31, 0.75: 0.58, 0.9: 0.8} | share with min gain >= 3: 0.28
+  74 trades pass balance >= 0.4 and min gain >= 3.0 (after dedupe)
+  selftest PASS: star-for-scrub rejected: T4 gives Dak Prescott for T.J. Watt (T1) -> -6.6 / +7.5
+  selftest PASS: surplus-for-need swap is mutual: RB-rich team gives Bucky Irving for Jaxon Smith-Njigba -> +50.1 / +50.3
+  wrote trades_week9.csv (74 trades; 37 involve team 4) in 133s
+  [LONDON Bridge is Falling Down] get Javonte Williams (RB, DAL) + Drake London (WR, ATL) | give Brock Bowers (TE, LV) + Emanuel Wilson (RB, SEA) | you +8.3 / them +9.5 | Hard sell
+      You: WR +2.0, FLEX +1.8, RB +1.6, TE -4.1 = net +1.2/wk. LONDON Bridge is Falling Down: TE +7.0, FLEX -1.3, RB -2.1, WR -2.2 = net +1.3/wk.
+  [LONDON Bridge is Falling Down] get Garrett Wilson (WR, NYJ) + Nakobe Dean (LB, LV) | give Hunter Henry (TE, NE) | you +11.4 / them +8.2 | Unlikely
+      You: WR +1.1, IDP +0.7, TE -0.4 = net +1.2/wk; Henry was mostly bench. LONDON Bridge is Falling Down: TE +3.3, IDP -0.8, WR -1.4 = net +1.0/wk.
+  [LONDON Bridge is Falling Down] get Garrett Wilson (WR, NYJ) | give Jamien Sherwood (LB, NYJ) + Hunter Henry (TE, NE) | you +7.9 / them +9.4 | Unlikely
+      You: WR +1.1 = net +0.9/wk; Henry was mostly bench. LONDON Bridge is Falling Down: TE +2.4, IDP +0.4, WR -1.4 = net +1.2/wk.
+  [LONDON Bridge is Falling Down] get Ernest Jones IV (LB, SEA) + Devaughn Vele (WR, NO) | give Hunter Henry (TE, NE) + Kyle Hamilton (S, BAL) | you +7.6 / them +7.8 | Fair on paper
+      You: IDP +1.0 = net +0.9/wk; Henry was mostly bench. LONDON Bridge is Falling Down: TE +2.4, IDP -1.0 = net +1.1/wk; Vele was mostly bench.
+  [LONDON Bridge is Falling Down] get Garrett Wilson (WR, NYJ) + Patrick Mahomes (QB, KC) | give Hunter Henry (TE, NE) | you +7.4 / them +9.7 | Unlikely
+      You: WR +1.1 = net +0.9/wk; Henry was mostly bench. LONDON Bridge is Falling Down: TE +2.4, QB +0.3, WR -1.4 = net +1.1/wk.
+  [LONDON Bridge is Falling Down] get Garrett Wilson (WR, NYJ) | give Hunter Henry (TE, NE) + Kyle Hamilton (S, BAL) | you +12.6 / them +7.3 | Unlikely
+      You: WR +1.1 = net +1.4/wk; Henry was mostly bench. LONDON Bridge is Falling Down: TE +2.4, WR -1.4 = net +0.9/wk.
+  [LONDON Bridge is Falling Down] get Garrett Wilson (WR, NYJ) + Devaughn Vele (WR, NO) | give Hunter Henry (TE, NE) | you +7.2 / them +10.0 | Unlikely
+      You: WR +1.2, TE -0.4 = net +0.7/wk; Henry was mostly bench. LONDON Bridge is Falling Down: TE +3.3, WR -1.9 = net +1.4/wk; Vele was mostly bench.
+  [LONDON Bridge is Falling Down] get Ernest Jones IV (LB, SEA) | give Hunter Henry (TE, NE) + Kyle Hamilton (S, BAL) | you +7.0 / them +9.7 | Easy yes
+      You: IDP +1.0 = net +0.9/wk; Henry was mostly bench. LONDON Bridge is Falling Down: TE +2.4, IDP -1.0 = net +1.3/wk.
+dashboard: page/page_week9.tsx built -> ask Grok Bot to refresh the 'Fantasy Week 9 Rankings' Page (canvas 1ef81067-034a-4b9a-b69e-b27a311688f3)
