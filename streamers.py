@@ -3,11 +3,13 @@
 Usage: python streamers.py --week 8 [--league yahoo_league_week8.md]
 LB slot = Yahoo positions containing LB (incl. LB,DE edges); D slot = anyone (DL/DE included).
 Two lists per slot:
-  safe = by injury-adjusted mean (rounded to 0.25), tiebreak simulated floor (P10), then median weekly points
-  boom = by P(>=10 pts) (the boom metric that beat a position base rate out of sample), tiebreak P90
+  safe = by P(>= 6 pts) from the v3 threshold model (threshold_week<N>.csv), tiebreak injury-adjusted mean
+  boom = by P(>= 12 pts) from the v3 threshold model, tiebreak P(>= 10) from the v2 Monte Carlo
+  Without threshold_week<N>.csv it falls back to v2: safe = mean, floor, median; boom = P(>=10), P90, P(>=12).
 The Monte Carlo is re-run here so Yahoo Q/D tags (no NFL report yet) lower play probability, floor and boom odds.
 """
 import argparse, os, re
+import numpy as np
 import pandas as pd
 import warnings; warnings.filterwarnings("ignore")
 import idp_ratings as M
@@ -18,6 +20,9 @@ YAHOO_TEAM = {"LAR": "LA", "JAC": "JAX", "WSH": "WAS"}
 TAGS = {"Q", "D", "O", "IR", "SUSP", "PUP", "NA"}
 # Applied only when the model itself has no injury report for the player (week-8 reports are mostly not out yet).
 TAG_MULT = {"Q": 0.85, "D": 0.25, "O": 0.0, "IR": 0.0, "SUSP": 0.0, "PUP": 0.0, "NA": 0.0}
+# v3 play probability from a Yahoo tag when there is no NFL report yet (2018-2025 history, idp_threshold.play_prob_table)
+TAG_PLAY = {"Q": 0.628, "D": 0.008, "O": 0.0, "IR": 0.0, "SUSP": 0.0, "PUP": 0.0, "NA": 0.0}
+V3_COLS = ["v3_p_ge6", "v3_p_ge12", "v3_x_pts", "v3_p_play"]
 STARTERS = {"D": ("Quinnen Williams", "DAL"), "LB": ("Andrew Van Ginkel", "MIN")}
 
 
@@ -98,21 +103,41 @@ def main():
     simc = ["sim_mean", "sim_median", "floor_p10", "p90", "p_ge10", "p_ge12", "p_sack", "p_takeaway"]
     J = J.drop(columns=[c for c in simc if c in J]).join(B[simc], on="gsis_id")
 
+    # v3 threshold model: P(>= 6) and P(>= 12), with the Yahoo tag as play probability when no NFL report exists
+    th_path = os.path.join(here, f"threshold_week{a.week}.csv")
+    V3 = pd.read_csv(th_path).drop_duplicates("gsis_id").set_index("gsis_id") if os.path.exists(th_path) else None
+
+    def v3(df, tags):
+        if V3 is None:
+            return pd.DataFrame({c: np.nan for c in V3_COLS}, index=df.index)
+        v = V3.reindex(df.gsis_id)
+        no_rep = v.inj_report.isna().to_numpy()
+        tagp = pd.Series(tags, index=df.index).map(TAG_PLAY).to_numpy(dtype=float)
+        pp = np.where(no_rep & ~np.isnan(tagp), np.minimum(tagp, v.p_play.to_numpy()), v.p_play.to_numpy())
+        return pd.DataFrame({"v3_p_ge6": v.p6_play.to_numpy() * pp, "v3_p_ge12": v.p12_play.to_numpy() * pp,
+                             "v3_x_pts": v.xpts_play.to_numpy() * pp, "v3_p_play": pp}, index=df.index)
+    J[V3_COLS] = v3(J, J.yahoo_tag)
+
     # starters (Yahoo tags from the league file: Bailey Q)
     st = {}
     for slot, (nm, tm) in STARTERS.items():
         r = R[R.k == norm_name(nm) + "|" + tm].iloc[0]
         tag = "Q" if nm == "David Bailey" else ""
         no_rep = pd.isna(r.inj_report) or str(r.inj_report).strip() == ""
+        sv = v3(pd.DataFrame({"gsis_id": [r.gsis_id]}), [tag]).iloc[0].to_dict()
         st[slot] = dict(name=nm, proj=r.proj_pts, proj_adj=adjmap[r.gsis_id], matchup=r.matchup, tag=tag,
-                        **{c: B.loc[r.gsis_id, c] for c in simc}, row=r)
+                        **{c: B.loc[r.gsis_id, c] for c in simc}, **sv, row=r)
 
     out = []
     J["safe_key"] = (J.proj_adj * 4).round() / 4
     for slot, pool in [("LB", J[J.yahoo_pos.str.contains("LB")]), ("D", J)]:
         pool = pool.drop_duplicates("k")
-        lists = {"safe": pool.sort_values(["safe_key", "floor_p10", "median_ppg"], ascending=False),
-                 "boom": pool.sort_values(["p_ge10", "p90", "p_ge12"], ascending=False)}
+        if V3 is not None:
+            lists = {"safe": pool.sort_values(["v3_p_ge6", "proj_adj"], ascending=False),
+                     "boom": pool.sort_values(["v3_p_ge12", "p_ge10"], ascending=False)}
+        else:
+            lists = {"safe": pool.sort_values(["safe_key", "floor_p10", "median_ppg"], ascending=False),
+                     "boom": pool.sort_values(["p_ge10", "p90", "p_ge12"], ascending=False)}
         s = st[slot]
         for lt, srt in lists.items():
             top = srt.head(15).copy()
@@ -126,35 +151,39 @@ def main():
             top["starter_p_ge10"] = s["p_ge10"]
             top["starter_p_ge12"] = s["p_ge12"]
             top["delta_vs_starter"] = (top.proj_adj - s["proj_adj"]).round(2)
+            top["starter_v3_p_ge6"] = s["v3_p_ge6"]
+            top["starter_v3_p_ge12"] = s["v3_p_ge12"]
             out.append(top)
         # starter row for comparison
         r = s["row"].copy()
         srow = pd.DataFrame([{**r.to_dict(), "slot": slot, "list_type": "starter", "slot_rank": 0, "waiver": "rostered",
                               "yahoo_tag": s["tag"], "yahoo_pos": "", "proj_adj": s["proj_adj"], "vs_starter": s["name"],
                               "starter_proj": s["proj"], "starter_proj_adj": s["proj_adj"], "delta_vs_starter": 0.0,
-                              **{c: s[c] for c in simc}}])
+                              **{c: s[c] for c in simc + V3_COLS}}])
         out.append(srow)
     O = pd.concat(out, ignore_index=True)
     O["mean"] = O.proj_adj
     cols = ["slot", "list_type", "slot_rank", "player", "team", "yahoo_pos", "role", "matchup", "gameday", "waiver",
-            "yahoo_tag", "proj_pts", "proj_adj", "mean", "sim_median", "floor_p10", "p90", "p_ge10", "p_ge12", "p_sack",
+            "yahoo_tag", "v3_p_ge6", "v3_p_ge12", "v3_x_pts", "v3_p_play", "starter_v3_p_ge6", "starter_v3_p_ge12", "proj_pts", "proj_adj", "mean", "sim_median", "floor_p10", "p90", "p_ge10", "p_ge12", "p_sack",
             "p_takeaway", "median_ppg", "games_ge6", "cv_pts", "ppg_ex_best", "best_game_pts", "rating_overall",
             "vs_starter", "starter_proj", "starter_proj_adj", "starter_p90", "starter_p_ge10", "starter_p_ge12",
             "delta_vs_starter", "season_ppg", "recent_ppg", "proj_snap_pct", "ol_matchup", "flags", "reason"]
-    for c in ["sim_median", "floor_p10", "p90", "p_ge10", "p_ge12", "p_sack", "p_takeaway", "cv_pts", "ppg_ex_best"]:
+    for c in ["sim_median", "floor_p10", "p90", "p_ge10", "p_ge12", "p_sack", "p_takeaway", "cv_pts", "ppg_ex_best"] + V3_COLS:
         O[c] = O[c].astype(float).round(3)
     O[cols].to_csv(os.path.join(here, f"streamers_week{a.week}.csv"), index=False)
     BS = O[O.list_type.isin(["boom", "starter"])][["slot", "list_type", "slot_rank", "player", "team", "yahoo_pos", "role",
-          "matchup", "waiver", "yahoo_tag", "mean", "sim_median", "floor_p10", "p90", "p_ge10", "p_ge12", "p_sack",
-          "p_takeaway", "ol_matchup"]]
+          "matchup", "waiver", "yahoo_tag", "v3_p_ge6", "v3_p_ge12", "mean", "sim_median", "floor_p10", "p90", "p_ge10",
+          "p_ge12", "p_sack", "p_takeaway", "ol_matchup"]]
     BS.to_csv(os.path.join(here, f"streamers_boom_week{a.week}.csv"), index=False)
     pd.set_option("display.width", 250); pd.set_option("display.max_colwidth", 60)
-    show = ["slot_rank", "player", "team", "yahoo_pos", "role", "matchup", "waiver", "yahoo_tag", "mean", "floor_p10",
+    show = ["slot_rank", "player", "team", "yahoo_pos", "role", "matchup", "waiver", "yahoo_tag", "v3_p_ge6", "v3_p_ge12",
+            "mean", "floor_p10",
             "p90", "p_ge10", "p_ge12", "median_ppg", "games_ge6"]
     for slot in ["LB", "D"]:
         s = st[slot]
         print(f"\n=== {slot} slot: starter {s['name']} {s['matchup']} mean {s['proj_adj']} P10 {s['floor_p10']} P90 {s['p90']} "
-              f"P10+ {s['p_ge10']:.1%} P12+ {s['p_ge12']:.1%}{' (Yahoo Q)' if s['tag'] else ''} ===")
+              f"P10+ {s['p_ge10']:.1%} P12+ {s['p_ge12']:.1%} | v3 P6+ {s['v3_p_ge6']:.1%} P12+ {s['v3_p_ge12']:.1%}"
+              f"{' (Yahoo Q)' if s['tag'] else ''} ===")
         for lt in ["safe", "boom"]:
             print(f"-- {lt} --")
             print(O[(O.slot == slot) & (O.list_type == lt)][show].head(10).round(3).to_string(index=False))

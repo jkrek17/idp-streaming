@@ -3,11 +3,13 @@
 # Before running: save yahoo_league_week<N>.md (IDP available) and yahoo_offense_available_week<N>.md
 # (offense available + FAAB), update roster.json if your roster changed, and league_rosters_week<N>.json for trades.
 set -e; cd "$(dirname "$0")"
-[ -d .venv ] || { python3 -m venv .venv && .venv/bin/pip install -q nflreadpy polars pandas pyarrow; }
+[ -d .venv ] || { python3 -m venv .venv && .venv/bin/pip install -q nflreadpy polars pandas pyarrow scikit-learn; }
 .venv/bin/python -c "import lightgbm, sklearn, scipy" 2>/dev/null || .venv/bin/pip install -q lightgbm scikit-learn scipy
 .venv/bin/python idp_ratings.py "$@"
 WEEK=$(ls -t ratings_week*.csv | head -1 | sed -E 's/ratings_week([0-9]+).csv/\1/')
 PREV=$((WEEK-1)); LO=$(( PREV-3 > 1 ? PREV-3 : 2 ))
+# v3 threshold model: P(>=6) and P(>=12) from 2018-present history -> threshold_week<N>.csv (refreshes this season's data)
+.venv/bin/python idp_threshold.py --refresh --week "$WEEK"
 # IDP streamers (needs yahoo_league_week<N>.md)
 [ -f "yahoo_league_week${WEEK}.md" ] && .venv/bin/python streamers.py --week "$WEEK" || echo "no yahoo_league_week${WEEK}.md; skipped streamers"
 # offense backtest on the last 4 completed weeks (feeds the dashboard's model-check panel)

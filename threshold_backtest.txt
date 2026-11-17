@@ -1,0 +1,29 @@
+IDP threshold model v3: walk-forward backtest (each season trained only on earlier seasons; 2026 refit weekly)
+Pool: defenders with recent snap share >= 50% who played. Baseline 'ppg' = EW (half-life 10 games) points/game.
+AUC within pos = mean of DL/LB/DB AUCs (0.5 = coin flip). topK = share of each week's top K that hit, averaged.
+
+season  thr     n   base | AUCpos v3    ppg | logloss v3 pos-rate | top10 v3    ppg | top24 v3    ppg
+  2023   6+  5846  0.256 |     0.639  0.620 |     0.5398   0.5614 |    0.528  0.467 |    0.481  0.440
+  2023  12+  5846  0.046 |     0.664  0.649 |     0.1784   0.1859 |    0.150  0.117 |    0.134  0.106
+  2024   6+  5819  0.244 |     0.645  0.620 |     0.5248   0.5477 |    0.478  0.361 |    0.468  0.405
+  2024  12+  5819  0.043 |     0.651  0.626 |     0.1676   0.1726 |    0.178  0.089 |    0.118  0.111
+  2025   6+  5930  0.233 |     0.641  0.614 |     0.5147   0.5352 |    0.489  0.461 |    0.470  0.403
+  2025  12+  5930  0.039 |     0.681  0.675 |     0.1549   0.1617 |    0.106  0.106 |    0.100  0.088
+  2026   6+  2948  0.244 |     0.636  0.623 |     0.5255   0.5459 |    0.467  0.422 |    0.468  0.454
+  2026  12+  2948  0.042 |     0.656  0.666 |     0.1645   0.1692 |    0.122  0.078 |    0.130  0.083
+
+(pos-rate log loss uses the in-sample position base rate, so it is a generous baseline.)
+
+Reliability P(6+), deciles, all seasons:  pred -> obs
+  0.092->0.087  0.142->0.141  0.176->0.171  0.201->0.191  0.221->0.216  0.243->0.240  0.271->0.276  0.310->0.307  0.364->0.357  0.448->0.457
+
+Reliability P(12+), deciles, all seasons:  pred -> obs
+  0.009->0.009  0.016->0.017  0.023->0.024  0.028->0.027  0.034->0.031  0.039->0.033  0.045->0.045  0.054->0.059  0.072->0.068  0.112->0.113
+
+Waiver tier (outside top 24 LB / 24 DL / 36 DB by ppg each week), 15251 player-games:
+  6+: base 0.209 | top-5 per week hit rate v3 0.470 vs ppg 0.394
+  12+: base 0.033 | top-5 per week hit rate v3 0.098 vs ppg 0.063
+
+Head to head with v2 on 2026 weeks 4-10 (2057 player-games, v2 proj snap >= 50%):
+  6+: AUC within pos v3 0.640 vs v2 0.613 | top10 v3 0.471 vs v2 0.529
+  12+: AUC within pos v3 0.665 vs v2 0.580 | top10 v3 0.114 vs v2 0.114 | logloss v3 0.1730 vs v2 0.1785

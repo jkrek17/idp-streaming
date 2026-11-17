@@ -5,3 +5,4 @@
 __pycache__/
 *_raw.md
 data_cache/
+cache/
