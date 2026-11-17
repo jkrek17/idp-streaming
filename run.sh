@@ -4,6 +4,7 @@
 # (offense available + FAAB), update roster.json if your roster changed, and league_rosters_week<N>.json for trades.
 set -e; cd "$(dirname "$0")"
 [ -d .venv ] || { python3 -m venv .venv && .venv/bin/pip install -q nflreadpy polars pandas pyarrow; }
+.venv/bin/python -c "import lightgbm, sklearn, scipy" 2>/dev/null || .venv/bin/pip install -q lightgbm scikit-learn scipy
 .venv/bin/python idp_ratings.py "$@"
 WEEK=$(ls -t ratings_week*.csv | head -1 | sed -E 's/ratings_week([0-9]+).csv/\1/')
 PREV=$((WEEK-1)); LO=$(( PREV-3 > 1 ? PREV-3 : 2 ))
@@ -29,3 +30,5 @@ else
   .venv/bin/python offense.py --week "$WEEK"
   echo "missing Yahoo files for week ${WEEK}; wrote offense_week${WEEK}.csv only"
 fi
+# player ranking + value model (offense and IDP, weekly / rest of season / playoffs) -> player_values.html
+.venv/bin/python -m player_model.run --week "$WEEK"

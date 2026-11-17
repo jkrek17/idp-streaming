@@ -119,6 +119,57 @@ Calibration, walk-forward wks 4-7 (`calib_boom.py`, `backtest_boom_weeks4-7.txt`
 - TDs, safeties, and blocks are not projectable; they enter only through shrunk history.
 - The boom model treats a player's events as independent given snaps; it does not model a defense-wide blowout or garbage-time spike. Its tails are slightly overconfident (see calibration).
 
+## Player ranking and value model (`player_model/`) - added Nov 17, 2026
+Ranks and values every offensive and IDP player for this league, with a consistency-to-ceiling switch.
+Offense (QB/RB/WR/TE/K) and IDP (DL/LB/DB) are separate pools. Each has position ranks plus a whole-pool ranking
+(W/R/T flex for offense, D slot for IDP, plus an LB-slot view). Horizons: this week, rest of season (weeks W-17), and playoffs (15-17).
+
+    .venv/bin/python -m player_model.run [--week N]     # ~2 min; writes player_values_week<N>.csv/.json and player_values.html
+    .venv/bin/python -m player_model.backtest           # season-held-out backtest -> player_model_backtest.txt/.csv
+`run.sh` calls it last. Data is cached in `data_cache/` (gitignored); the current season refreshes each run.
+
+**Data.** nflverse 2018-2026 player stats, snap counts, play-by-play (red-zone usage, team plays/dropbacks/rushes), schedules
+(Vegas lines), injuries and weekly rosters. Zero-stat games (on the field, no stat) are added from snap counts so floors are honest.
+**Features** (`features.py`), each built only from earlier games:
+- Usage: snap share, target share, carry share, red-zone target/carry shares, air-yards share, pass-attempt share; IDP snap share,
+  tackles per opponent play, solo share, and sack / QB-hit / TFL / PD / INT / FF rates per snap; K attempts and FG yards per game.
+- Every rate is a recency-decayed sum (8-week and 3-week half-lives on a season*30+week clock, so last season counts about 1/3)
+  shrunk toward the position mean by empirical Bayes. The prior strength k is fit by method of moments from player-season
+  spreads (beta-binomial for shares, gamma-Poisson for per-snap rates), so noisy stats (INT, sacks) shrink hard and snap share barely.
+- Consistency over the last 16 games: sd, CV, 20th/80th percentile games, max, and shrunk start / boom / bust rates.
+- Context: implied team total, spread, total, home, rest, dome, opponent points allowed to the position (decayed), age,
+  experience, draft slot, weeks since last game, and usage x implied-total interactions.
+**Models** (`model.py`): LightGBM per pool. Mean (L2), quantiles 10/25/50/75/90 (pinball loss, sorted to avoid crossing), and
+P(start-worthy) / P(boom) classifiers with isotonic calibration on a held-out season. Thresholds (start / boom):
+QB 17/25, RB 10/20, WR 10/20, TE 7/15, K 8/13, DL 5/10, LB 7/12, DB 6/11.
+Production fit: model A trains 2019 to last-2 seasons and early-stops/calibrates on last season; model B refits through the last
+completed week with A's iterations x1.15 and A's calibrators.
+**Availability**: injury report, Yahoo tag, NFL roster status (IR = out 4 weeks then 50%), and missed-last-game (0.6). It mixes a
+chance of 0 into the mean and quantiles; short-term injuries heal at 50% per week in the ROS sums.
+If `offense_week<N>.csv` exists, this week's offense projections are blended 50/50 with offense.py (backtest weeks 4-8:
+Spearman 0.399/0.396 alone -> 0.421 blended, MAE 4.88 -> 4.80).
+**Value** (`value.py`, live in the page): mode score = mean pulled toward the 25th pct (consistency) or 90th pct (ceiling),
+`lam` in [-1, 1]; ROS = sum of weekly scores. Value = score minus the average of the 3 best unrostered players at the position
+(from `league_rosters_week<N>.json`; falls back to the 13th-15th best if no roster file). Tiers break on large score gaps.
+
+**Backtest** (train 2019-2024, calibrate 2025, test 2026 weeks 3-10, never trained on; players with a real role; mean over weeks):
+
+| Spearman | model | decayed ppg | season ppg |
+|---|---|---|---|
+| QB | **0.50** | 0.46 | 0.36 |
+| RB | **0.50** | 0.48 | 0.36 |
+| WR | **0.54** | 0.51 | 0.44 |
+| TE | **0.57** | 0.53 | 0.49 |
+| K | 0.04 | **0.15** | 0.13 |
+| DL | **0.28** | 0.19 | 0.19 |
+| LB | **0.42** | 0.31 | 0.27 |
+| DB | **0.38** | 0.29 | 0.24 |
+
+Head-to-head with offense.py on the same 1,117 player-weeks (weeks 4-8): about even overall (Spearman 0.396 vs 0.399, MAE 4.87 vs 4.88);
+better on WR and TE, worse on RB and QB, so the blend helps. Kickers are close to noise for every model.
+The 10-90 band covers 76-81% of outcomes (target 80%), and P(start) beats the position base rate on log loss at every position.
+Full output: `player_model_backtest.txt`. Route participation is not in free nflverse data, so routes are not used yet.
+
 ## Offense model (offense.py) - added week 8
 - QB/RB/WR/TE/K. Team volume (plays, pass rate) x shrunk, recency-weighted player shares (targets, carries, RZ, inside-10), efficiency priors (aDOT-adjusted yards/target, ypc, catch rate), defense factors (opponent allowed vs league), Vegas implied totals (fallback: avg of offense ppg and defense ppg allowed). Monte Carlo gives floor (P10), median, P90, P(boom): QB 25+, RB/WR 20+, TE 15+, K 12+.
 - Matchup grade = projection / neutral-opponent projection: F <0.90, D <0.95, C- <0.985, C <1.015, B <1.05, A <1.10, A+ above. IDP grade uses opp_fpa_idx with the same bins.
