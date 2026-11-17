@@ -153,6 +153,30 @@ def load_yahoo(W):
     return pd.DataFrame(rows).drop_duplicates("key"), f
 
 
+def use_idp_threshold_model(R: pd.DataFrame, W: int) -> pd.DataFrame:
+    """One IDP model for week W: take P(6+), P(12+) and expected points (all given he plays) from the threshold
+    model (idp_threshold.py -> threshold_week<W>.csv) and shift this model's quantiles to its mean.
+    Head-to-head at 6+/12+, 2023-2026 (scratch backtest, Nov 17): threshold model AUC within position
+    0.643 / 0.666 vs this model's 0.641 / 0.660, ahead in 2023-2025 and behind in 2026; a stacked blend added
+    only ~0.003. Later weeks (rest of season, playoffs) still come from this model, trained on the same 6/12 lines."""
+    path = os.path.join(ROOT, f"threshold_week{W}.csv")
+    if not os.path.exists(path):
+        print(f"no {os.path.basename(path)}: IDP week {W} uses this model's own numbers", file=sys.stderr)
+        return R
+    t = pd.read_csv(path).drop_duplicates("gsis_id").set_index("gsis_id")
+    m = (R.week == W) & R.pos.isin(Mo.POOLS["idp"]) & R.player_id.isin(t.index)
+    pid = R.loc[m, "player_id"]
+    shift = pid.map(t.xpts_play) - R.loc[m, "mean"]
+    R.loc[m, ["mean"] + QC] = R.loc[m, ["mean"] + QC].add(shift, axis=0).clip(lower=0)
+    R.loc[m, "p_start"] = pid.map(t.p6_play)
+    R.loc[m, "p_boom"] = pid.map(t.p12_play)
+    R.loc[m, "idp_v3"] = True
+    R.loc[m, "v3_p_play"] = pid.map(t.p_play)
+    R.loc[m, "v3_has_report"] = pid.map(t.inj_report).notna()
+    print(f"IDP week {W}: {m.sum()} players from {os.path.basename(path)}", file=sys.stderr)
+    return R
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int)
@@ -180,7 +204,20 @@ def main():
         P = R[Mo.pool_mask(R, pool)]
         preds.append(P[[]].join(pm.predict(P)))
     R = R.join(pd.concat(preds))
+    R["idp_v3"] = False
+    R = use_idp_threshold_model(R, W)
     R["avail"] = availability(R, D, cur, W, yahoo)
+    if R.idp_v3.any():
+        # same play probability as the streamer lists: the threshold model's (2018-2025 history), with the Yahoo
+        # tag standing in when the NFL report is not out yet (streamers.TAG_PLAY)
+        from streamers import TAG_PLAY
+        m = R.idp_v3
+        ytag = R.loc[m, "player_display_name"].map(M.norm_name).map(
+            yahoo.set_index("key").status if len(yahoo) else {}).fillna("")
+        tagp = ytag.map(TAG_PLAY).astype(float)
+        pp = R.loc[m, "v3_p_play"].astype(float)
+        use_tag = ~R.loc[m, "v3_has_report"].astype(bool) & tagp.notna()
+        R.loc[m, "avail"] = np.where(use_tag, np.minimum(pp, tagp), pp)
     a = R.avail.to_numpy()
     R[QC] = mix_quantiles(R[QC].to_numpy(), a)
     R["mean"] = R["mean"] * a
