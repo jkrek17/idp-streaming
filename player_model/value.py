@@ -5,9 +5,9 @@ Mode score per game, with lam in [-1, 1]:
     lam > 0 (ceiling):     mean +  lam  * 0.5 * (q90 - mean)   -> at +1 it is the average of mean and 90th pct
 Rest-of-season scores are sums of weekly scores, so the same formula applies to the summed mean/q25/q90.
 
-Replacement level = average score of the 3 best players at the position that no team rosters (from
-league_rosters_week<N>.json). Without a roster file it falls back to the first non-starters after filling
-12 teams' starting lineups. The page (page.py) repeats this in JavaScript so the mode slider is live.
+Replacement level = average of the 3 best players left after filling 12 teams' starting lineups
+(QB 12, RB 24, WR 24, TE 12, W/R/T 12, K 12; LB 12 from LB-eligible, D 12 from any IDP). IDP uses one level for
+DL/LB/DB because the D slot takes any of them. Free-agent comparisons (Waivers tab) use the league rosters file. The page (page.py) repeats this in JavaScript so the mode slider is live.
 """
 from __future__ import annotations
 import numpy as np, pandas as pd
@@ -16,7 +16,7 @@ from .league import TEAMS, SLOTS, FLEX_ELIG, POOL_POS, PLAYOFF_WEEKS
 
 KEEP_N = {"QB": 40, "RB": 85, "WR": 115, "TE": 50, "K": 32, "DL": 90, "LB": 90, "DB": 110}
 USAGE = ["snap", "snap_s", "tgt_sh", "tgt_sh_s", "car_sh", "car_sh_s", "rz_tgt_sh", "rz_car_sh", "att_sh",
-         "ay_sh", "tkl_sh", "tkl_sh_s", "solo_sh", "sack_rate", "hit_rate", "tfl_rate", "pd_rate", "exp_tgt",
+         "ay_sh", "tkl_sh", "tkl_sh_s", "solo_sh", "sack_rate", "hit_rate", "tfl_rate", "pd_rate", "hit_rate_s", "sack_rate_s", "tfl_rate_s", "pd_rate_s", "solo_sh_s", "exp_tgt",
          "exp_car", "exp_tkl", "fga_g", "fgyd_g"]
 CONS = ["roll_mean", "roll_sd", "roll_q20", "roll_q80", "rate_start", "rate_boom", "rate_bust", "cv", "cons_n",
         "ppg", "ppg_s"]
@@ -46,6 +46,9 @@ def replacement(df: pd.DataFrame, score: str, pool: str, use_rosters: bool) -> d
                 used.add(i)
                 break
     rest = df.drop(index=list(used))
+    if pool == "idp":   # the D slot takes any IDP, so one replacement level for the pool
+        lvl = float(rest[score].nlargest(3).mean() or 0.0)
+        return {pos: lvl for pos in POOL_POS[pool]}
     for pos in POOL_POS[pool]:
         out[pos] = float(rest[rest.pos == pos][score].nlargest(3).mean() or 0.0)
     return out
@@ -55,12 +58,13 @@ def assemble(R: pd.DataFrame, S_hist: pd.DataFrame, yahoo: pd.DataFrame, W: int,
     QC = ["q10", "q25", "q50", "q75", "q90"]
     wk = R[R.week == W].set_index("player_id")
     g = R.groupby("player_id")
-    ros = g[["mean", "q25", "q90"]].sum().add_prefix("ros_")
+    QS5 = ["q10", "q25", "q50", "q75", "q90"]
+    ros = g[["mean"] + QS5].sum().add_prefix("ros_")
     ros["ros_games"] = g.size()
     ros["ros_avail"] = g.avail.mean()
     ros["ros_p_start"] = g.p_start.mean()
     ros["ros_p_boom"] = g.p_boom.mean()
-    po = R[R.week.isin(PLAYOFF_WEEKS)].groupby("player_id")[["mean", "q25", "q90"]].sum().add_prefix("po_")
+    po = R[R.week.isin(PLAYOFF_WEEKS)].groupby("player_id")[["mean"] + QS5].sum().add_prefix("po_")
     po["po_games"] = R[R.week.isin(PLAYOFF_WEEKS)].groupby("player_id").size()
     base = g[["player_display_name", "pos", "team"]].first()
     T = base.join(ros).join(po)
@@ -88,7 +92,7 @@ def assemble(R: pd.DataFrame, S_hist: pd.DataFrame, yahoo: pd.DataFrame, W: int,
     T = T[T.groupby("pos").cumcount() < T.pos.map(KEEP_N).fillna(50)]
 
     # python-side values for the CSV (page recomputes live)
-    use_rosters = T.owner.notna().any()
+    use_rosters = False   # value = points above a fringe starter (12-team starting-lineup fill); FA comparisons live on the page
     for lam, tag in [(-1, "cons"), (0, "bal"), (1, "ceil")]:
         T[f"ros_score_{tag}"] = mode_score(T.ros_mean, T.ros_q25, T.ros_q90, lam)
         T[f"w_score_{tag}"] = mode_score(T.w_mean, T.w_q25, T.w_q90, lam)
