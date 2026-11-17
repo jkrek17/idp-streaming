@@ -15,7 +15,7 @@ CONS_N = 16                      # games in the consistency window
 IDP_POS = ["DL", "LB", "DB"]
 # weekly thresholds by position (league scoring): "start" ~ a weekly top-N starter, "boom" ~ weekly top-5ish
 THR = {"QB": (17, 25), "RB": (10, 20), "WR": (10, 20), "TE": (7, 15), "K": (8, 13),
-       "DL": (5, 10), "LB": (7, 12), "DB": (6, 11)}
+       "DL": (6, 12), "LB": (6, 12), "DB": (6, 12)}   # IDP: the league's 6+ / 12+ lines, same as idp_threshold.py
 
 # (name, numerator, denominator, kind) -> shrunk share features. kind: "binom" (share of team volume)
 # or "pois" (rate per exposure).

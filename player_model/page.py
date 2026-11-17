@@ -188,7 +188,7 @@ details.how pre{font:11px/1.4 var(--mono);overflow-x:auto;background:var(--panel
 <script>
 const DATA = __DATA__;
 const POS = {offense:["QB","RB","WR","TE","K"], idp:["DL","LB","DB"]};
-const THR = {QB:[17,25],RB:[10,20],WR:[10,20],TE:[7,15],K:[8,13],DL:[5,10],LB:[7,12],DB:[6,11]};
+const THR = {QB:[17,25],RB:[10,20],WR:[10,20],TE:[7,15],K:[8,13],DL:[6,12],LB:[6,12],DB:[6,12]};
 const SLOTS = [["QB",["QB"]],["RB",["RB"]],["RB",["RB"]],["WR",["WR"]],["WR",["WR"]],["TE",["TE"]],["W/R/T",["RB","WR","TE"]],["K",["K"]],["LB",["LB*"]],["D",["DL","LB","DB"]]];
 const HAVE_OWNERS = DATA.players.some(p=>p.owner);
 const OWNERS = [...new Set(DATA.players.map(p=>p.owner).filter(Boolean))].sort();
